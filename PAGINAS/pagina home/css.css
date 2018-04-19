@@ -1,0 +1,436 @@
+html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+}
+
+body {
+      font-family: "Helvetica Neue",sans-serif; /*para fontes*/
+      font-weight: bold;/*para definir o estilo da fonte*/
+}
+
+header { /*para definir o cabeçalho do site*/
+      width: 100%;
+      height: 100vh;
+      background: url(imagens/img.jpg) no-repeat 50% 50%;/*tag para colocar imagem e para nao se repitir e o tamenho de espaço coberto em %*/
+      background-size: cover;/*propriedade especifica o tamanho das imagens de fundo e o "cover" Redimensione a imagem de fundo para cobrir todo a pagina(container)*/
+
+}
+.botaop{
+      width: 80px;
+      height: 20px;
+      margin: 400px 0px 0px 600px;
+      font-style: arial;
+      color:#fff;
+      font-size: 87%;
+      text-align: center;
+      padding: 10px 40px 10px 40px;
+      border-radius: 10px;
+      border-style: solid;
+      border-width: 1px 1px 1px 1px;
+      border-color: #fff;
+      position: absolute;
+	  z-index:0;
+
+
+}
+.botaop:hover{
+      background-color:#006400;
+      color: #fff;
+      border-color: #006400;
+
+}
+
+
+
+#sideBar{ /*menu lateral*/
+    position: fixed;
+    z-index: 3;
+    height: 90vh;
+    width: 20.3%;
+    top: 10vh;
+    left: -30%; /*a posição na esquerda é de -30%, ou seja, a origem do elemento está fora da tela*/
+    background-color: rgba(205,215,244,0.7);
+    color: rgb(16,80,106);
+    font-size: 1rem;
+    transition: 0.5s; /*qualquer mudança no estilo desse elemento será executada durante 0.5 segundos*/
+    font-family: Microsoft JhengHei UI light;
+     line-height: 3em; /*tamanho da linha =  3em*/
+}
+.sideBar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.logo {
+      line-height: 30px;/*propriedade especifica a altura de uma linha.*/
+      position: fixed;/*posição do objeto de acordo com a barra de navegção do site*/
+      float: left;/*para que o objeto flutue na pagina para o lado esquerdo*/
+      margin: 16px 46px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 20px;
+      letter-spacing: 2px;/*propriedades aumenta ou diminui o espaço entre os caracteres de um texto.*/
+}
+ 
+ nav {/*tudo que é dentro da nav*/
+      position: fixed;
+      width: 100%;
+      line-height: 30px;
+	  z-index:3;
+     
+
+}
+
+nav ul {/*tudo que é dentro da nav com a tag ul*/
+      line-height: 30px;
+      list-style: none;
+      background: rgba(0, 0, 0, 0);
+      overflow: hidden; /*propriedade especifica o que deve acontecer se o conteúdo transborda caixa de um elemento,  é cortado e o restante do conteúdo ficará invisível*/
+      color: #fff;
+      padding: 0;
+      text-align: right;
+      margin: 0;s
+      padding-right: 40px;
+      transition: 1s;/*para determinar o tempo em trasação de uma caixa a outra*/
+
+
+}
+
+nav ul li .l{
+  padding: 8px 25px 8px 25px;
+  border-radius: 8px;
+  border-width: 1px;
+  border-color: #fff;
+  border-style: solid;
+
+}
+
+nav ul li .l:hover{
+      background-color:#006400;
+      color: #fff;
+      border-color: #006400;
+
+}
+
+
+nav.black ul {/*função para o java script*/
+      background-color:#9ACD32;
+      
+
+}
+
+nav.black .l {
+      background-color:#006400;
+      color: #fff;
+      border-color: #006400;
+
+}
+
+nav ul li {
+      display: inline-block;/*definição de tamanho onde pode ser alterado tamebm*/
+      padding: 16px 40px;;
+}
+ 
+nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+}
+
+.menu-icon { /*para alteração do icone de Menu*/
+      line-height: 60px;
+      width: 100%;
+      background: #000;
+      text-align: right;
+      box-sizing: border-box;
+      padding: 15px 24px;
+      cursor: pointer;/*função para o movimento do mouse*/
+      color: #fff;
+      display: none;/*é comumente usado com JavaScript para ocultar e mostrar elementos sem excluir e recriar-los.*/
+      background-color:#9ACD32;
+}
+
+.parcerias {
+      height:400px;
+      width:100%;
+      color: #006400;
+      margin-top: -50px;
+
+
+      
+}
+.divpacerias{
+      height: 100px;
+      width: 120px;
+      margin: 80px 0px 0px 20px;
+      padding: 100px 60px;
+      float: left;
+      
+      
+}
+
+
+.divpacerias:hover{
+    border-style: solid;
+    border-spacing: 2px;
+    border-width: 2px 2px 2px 2px;
+    border-color: #00FF00;
+    border-radius: 6px;
+
+      
+}
+.textop{
+      width: 100px;
+      height:30px;
+      font-style:Impact;
+      font-weight: 800;
+      margin:-65px 0px 0px 0px;
+      text-align: center;
+}
+p{
+height: 20px;
+width: 20em;
+margin-left: -50px;
+font-size: 11px;
+font-style: arial;
+color: black;
+
+}
+
+
+.pagina{ /*classe para colocar conteudo como caixas com frases ou caixas com imagens de chocolate*/
+
+    z-index: 1;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color:#fff; 
+    overflow: hidden;
+    float: left;
+}
+
+.paginaFT{ /*classe com imagem de fundo usada no site*/
+
+    z-index: 1;
+    height: 700px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(63,158,190); 
+    overflow: hidden;
+    background-repeat: no-repeat; /*background-repeat: no-repeat, caso o background não seja grande o suficiente para cobrir o elemento, 
+                                                      a imagem não vai ficar se repetindo*/
+    float: left;
+    font-size: 3rem;
+    background-size: cover; /*background-size: cover, o background vai ajustar o tamanho para cobrir o elemento inteiro*/
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+}
+
+.textoFT{ /*classe transparente usada com texto na frente das fotos*/
+    
+font-style: arial;
+text-align: center;
+margin-top: 300px;
+     
+    
+}
+
+
+.caixaCor{ /*caixa azul que aparece no site uma vez com a img do chocolate e outra com a img do sensor(iphone)*/
+    
+    height: 100%;
+    width: 50%;
+    top: 0;
+    left: 0;
+    background-color: #fff; 
+    overflow: hidden;
+    float: left;
+    color: #ccc;
+    font-size: 3rem;
+    }
+
+.caixa{ /*caixa branca que contem alguns textos no site e aparece do lado das caixas azuis*/
+   
+    height: 100%;
+    width: 30%;
+    top: 0;
+    left: 0;
+   
+    float: left;
+    font-size: 15px;
+    padding: 10%;
+    margin: 2px auto;
+}
+
+.titulo{
+height: 50px;
+width: 350px;
+text-align: center;
+margin-left: 20px;
+margin-top: -150px;
+margin-bottom: 40px;
+font-style:Impact;
+font-weight: 800;
+color: #006400;
+font-size: 50px;
+}
+
+.botaop2{
+      width: 80px;
+      height: 20px;
+      margin: 500px 0px 0px 200px;
+      font-style: arial;
+      color:#228B22;
+      font-size: 15px;
+      text-align: center;
+      padding: 10px 20px 10px 20px;
+      border-radius: 10px;
+      border-style: solid;
+      border-width: 1px 1px 1px 1px;
+      border-color: #00FF00;
+      position: absolute;
+
+
+}
+.botaop2:hover{
+      background-color:#006400;
+      color: #fff;
+      border-color: #006400;
+}
+
+.botaop3{
+      width: 80px;
+      height: 20px;
+      margin: 400px 0px 0px 880px;
+      font-style: arial;
+      color:#228B22;
+      font-size: 15px;
+      text-align: center;
+      padding: 10px 20px 10px 20px;
+      border-radius: 10px;
+      border-style: solid;
+      border-width: 1px 1px 1px 1px;
+      border-color:#00FF00;
+      position: absolute;
+
+}
+.botaop3:hover{
+      background-color:#006400;
+      color: #fff;
+      border-color: #006400;
+}
+
+.caixa img, .caixaCor img{ /*estilo da tag img quando está dentro da classe caixa ou caixaCor*/
+    height: 100%;
+    width: 100%
+}
+
+a{ /*estilo da tag <a>*/
+    text-decoration: none; /*sem decoração de texto (como sublinhado ou italico)*/
+    color: rgb(16,80,106);
+}
+
+#rodape{
+    position: relative;
+    z-index: 1;
+    height: 5vh;
+    width: 80%;
+    top: 0;
+    left: 0;
+    background-color:#228B22; 
+    overflow: hidden;
+    float: left;
+    text-align: left;
+    color: #ccc;
+    padding: 10%;
+    text-align: justify; /*alinhamento do texto = justificado*/
+}
+
+
+@media(max-width: 785px) { /*@mediaregra é usada em consultas de mídia para aplicar estilos diferentes para diferentes media tipos / dispositivos e o "max-width" é para definir o tamanho da tela que tera essa consulta*/
+ 
+      .logo { /*elemento do logo*/
+            position: fixed;
+            top: 0;
+            margin-top: 16px;
+      }
+   nav ul {
+            max-height: 0px;/*´para definir a altura media da barra */
+            background:#9ACD32;
+      }
+ 
+      nav.black ul {
+            background:#9ACD32;
+      }
+ 
+      .showing {
+            max-height: 2500px;/*para definir o tamanho da caixa */
+      }
+ 
+      nav ul li {
+            box-sizing: border-box;/*preenchimento de borda min e max*/
+            width: 100%;
+            padding: 24px;
+            text-align: center;
+      }
+      nav ul li:hover{           
+            background:#006400;
+      }
+ 
+      .menu-icon {
+            display: block;/*exibe a caixinha da div e exibe como um elemento de bloco (como <p>). Começa em uma nova linha e ocupa toda a largura*/ 
+      }
+
+      .botao:hover{
+    
+    background-color:#36648B;}
+
+
+      .pagina{ /*classe para colocar conteudo como caixas com frases ou caixas com imagens de chocolate*/
+       display: block;
+       width: 750px;
+      height: 300px;
+      }
+
+     .paginaFT{ /*classe com imagem de fundo usada no site*/
+       display: block;
+       width: 750px;
+      height: 100px;
+     }
+
+  .textoFT{ /*classe transparente usada com texto na frente das fotos*/
+    
+    margin: auto 50px;
+    
+}
+
+#rodape{
+       display: block;
+       width: 600px;
+      height: 30px;
+}
+
+
+
+.caixa{ /*caixa branca que contem alguns textos no site e aparece do lado das caixas azuis*/
+    color: #14204d;
+    font-size: 2rem;
+    padding: 10%;
+    font-family: Microsoft JhengHei UI light;
+    text-align: justify;
+}
+
+    
+}
+
+
+ 
+}

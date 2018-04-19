@@ -1,0 +1,144 @@
+
+#animal { /*div do video*/
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    
+    
+}
+
+.backopacidade{ /*div que ficará atrás para APENAS dar o efeito de opacidade*/
+    position: absolute;   
+    background-color: black;
+    opacity: 0.3;
+    z-index: -1; 
+    height: 100%; /*tamanho 100% para ficar dentro da caixa*/
+    width: 100%;
+}
+
+/* O Z-INDEX DEFINE QUAL CAIXA VAI FICAR DENTRO DE QUAL CAIXA. OS NUMEROS DE -1 A 3 DEFINEM O GRAU DE IMPORTANCIA. SENDO -1 O QUE VAI FICAR MAIS ATRÁS E 3 O QUE VAI FICAR MAIS NA FRENTE*/
+
+.backvideo { /*caixa que ficará com fundo transparente para aparecer a opacidade da de trás*/
+    background-color: transparent;
+    position: relative;
+    width: 350px;
+    height: 250px;
+    margin: 0 auto;
+    padding-bottom: 5%;
+    z-index: 3;
+    margin-top: 3%;
+ 
+  
+    
+}
+
+#text { /*div para inserção de texto para que não seja atingido pela opacidade*/
+    opacity:  1.0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: tahoma;
+    font-style: bold;
+    color: white;
+    z-index: 3;
+    position: absolute; 
+   
+  }
+
+button { background-color: green; /*botão de enviar*/
+		color: white;
+		height: 13%;
+		width: 50%;
+        font-family: helvetica;
+        font-size: 14px;
+        border: none;
+    }
+
+.textinho{ /*campo de 'textinho top aqui'*/
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 7%;
+    color: white;
+}		
+.topbox{ /*box da página de home*/
+    background-color: transparent;
+    position: relative;
+    text-decoration: none;
+    margin-top: 5px;
+    height: 3%;
+    width: 9%;
+    padding: 1%;
+    font-family: tahoma;
+    font-size: 80%;
+    color: white;
+
+
+}
+#textop{ /*botão pra home- div com texto para não ser atingida pela opacidade*/
+    text-decoration: none; 
+    text-align: center;
+    font-family: tahoma;
+    font-size: 85%;
+    color: white;
+    padding: 25%;
+}
+
+.fundotop{ /*caixinha com opacidade para o botão da home, no mesmo esquema dos botões anteriores*/
+    
+    position: absolute;   
+    background-color: black;
+    opacity: 0.3;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+
+}
+
+
+h1 {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+#senha{ /*campo de senha*/
+    border-top: 0px;
+    border-left:  0px;
+    border-right: 0px;
+    border-bottom: 0px;
+    opacity: 0.3;
+    background-color: BLACK;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-right: 25%;
+    padding-left: 4%;
+
+}
+
+body{
+    background-color: tomato;
+}
+#usuario{/*campo de usuario*/
+    
+    border-top: 0px;
+    border-left:  0px;
+    border-right: 0px;
+    border-bottom: 0px;
+    opacity: 0.3;
+    background-color: BLACK;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-right: 25%;
+    padding-left: 4%;
+    color: white;
+}
+
+
