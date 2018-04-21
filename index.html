@@ -13,22 +13,22 @@
 </head>
       <body>
       <div class="wrapper"><!--Um wrapper é algo que envolve um único objeto para fornecer mais funcionalidade e interface para ele-->
-            <header>
+            <header a id="Home">
                 <nav> <!-- conjunto de links de navegação.-->
                     <div class="menu-icon">
                         <i class="fa fa-bars fa-2x"></i><!--para ter o icone e o tamanho-->
                     </div>
 
                     <div class="logo"><!--A class onde insere o logo-->
-                        <img src="imagens/aptum.png " width="160px" style="margin-top: -12px"> <!--Se definir só o width ja ajusta o height automaticamente-->
+                        <img src="imagens/aptum.png">
                     </div>
 
                     <div class="menu">
                         <ul>
-                              <li><a href="#">Home</a></li>
-                              <li><a href="#">Empresa</a></li>
-                              <li><a href="#">Produto</a></li>
-                              <li><a href="#">Contatos</a></li>
+                              <a href="#Home"><li>Home</li></a>
+                              <a href="#Produto"><li>E-Scale</li></a>
+                              <a href="#Empresa"><li>APTUM™</li></a>
+                              <a href="#Contatos"><li>Contatos</li></a>
                               <li class='semBorda'><a href="#" class="l">Login</a><a href="#" class="l">Cadastre-se</a></li> <!--Class 'semBorda' usada na tag <li> botão login pra não ter borda quando dar hover-->
 
                         </ul>
@@ -39,9 +39,9 @@
 
 
             <section>
-                  <div class="pagina" id='empresa'> <!--Div caixa q é o quadrado meio banco, nesse caso do lado do chocolate com uma frase-->
+                  <div class="pagina" id='Produto'> <!--Div caixa q é o quadrado meio banco, nesse caso do lado do chocolate com uma frase-->
                       <div class='caixa'> <br><br>
-                          <div class="titulo">Produto</div>
+                          <div class="titulo">Project E-Scale</div>
                               <div class="textocorpo">De fato, tanto as expressões espanhola e portuguesa empresa como as acepções francesa e inglesa entrepreneur procedem etimologicamente do verbo latino in prehendo-endi-ensum, que significa descobrir, ver, perceber, dar-se conta de, capturar; e a expressão latina in prehensa comporta claramente a ideia de ação, no sentido de tomar, agarrar. Em suma, empresa é sinônimo de ação, sendo que na França já há muito tempo, na Alta Idade Média, se utilizava o termo entrepreneur para designar as pessoas encarregadas de efetuar ações importantes, geralmente relacionadas com a guerra, ou de levar a cabo os grandes projetos relacionados com a construção de catedrais. No castelhano, um dos significados do termo empresa, de acordo com o Diccionario da Real Academia Espanhola, é o de "ação árdua e difícil que se inicia valorosamente".  
                               </div>
                           </div>
@@ -62,9 +62,9 @@
             </div>
             
                   <!--mesmo caso da div com id ='empresa'-->
-            <div class="pagina" id='produto'>
+            <div class="pagina" id='Empresa'>
                 <div class='caixaCor'> <img src='imagens/empresa.png'> </div>
-                <div class='caixa'> <br><br><div class="titulo">Empresa</div>O Arduino foi criado em 2005 por um grupo de 5 pesquisadores : Massimo Banzi, David Cuartielles, Tom Igoe, Gianluca Martino e David Mellis. O objetivo era elaborar um dispositivo que fosse ao mesmo tempo barato, funcional e fácil de programar, sendo dessa forma acessível a estudantes e projetistas amadores. Além disso, foi adotado o conceito de hardware livre, o que significa que qualquer um pode montar, modificar, melhorar e personalizar o Arduino, partindo do mesmo hardware básico. </div>
+                <div class='caixa'> <br><br><div class="titulo">APTUM</div>O Arduino foi criado em 2005 por um grupo de 5 pesquisadores : Massimo Banzi, David Cuartielles, Tom Igoe, Gianluca Martino e David Mellis. O objetivo era elaborar um dispositivo que fosse ao mesmo tempo barato, funcional e fácil de programar, sendo dessa forma acessível a estudantes e projetistas amadores. Além disso, foi adotado o conceito de hardware livre, o que significa que qualquer um pode montar, modificar, melhorar e personalizar o Arduino, partindo do mesmo hardware básico. </div>
                 <div href="produto.html" class="botaop3">Saiba mais</div>
             </div>
             
@@ -143,7 +143,7 @@ Nota: A overflowpropriedade só funciona para elementos de bloco com uma altura 
              </div>        
             </div>
 
-            <div class="rodape">
+            <div class="rodape" id="Contatos">
 			
 				<div class='areasRodape'>
 					<div class='tituloAreaRodape'>Localização</div>
@@ -221,8 +221,8 @@ Nota: A overflowpropriedade só funciona para elementos de bloco com uma altura 
              <script type="text/javascript">
 
       // Scrolling Effect
-
-      $(window).on("scroll", function() { //Rola a janela para uma posição específica no documento e a tag "scroll" e uma tag que faz a exibição do objeto.
+	
+      $(window).on("scroll load", function() { //Rola a janela para uma posição específica no documento e a tag "scroll" e uma tag que faz a exibição do objeto.
             if($(window).scrollTop()) { //Onde quando a barra navegar estiver no "scrollTop" no topo da pagina vai exercer essa função
                   $('nav').addClass('black');//Onde as condiçoes são quando a barra de navegação conhecida como "nav" nao estiver no topo vai adicionar a "cor" escolhida
             }
@@ -231,6 +231,32 @@ Nota: A overflowpropriedade só funciona para elementos de bloco com uma altura 
                   $('nav').removeClass('black');//Caso ao contrario quando estiver no topo vai remover a "cor escolhida"
             }
       })
+	  
+	  
+	  //Rolagem lisa qndo clica nos links do menu
+	  $(document).ready(function(){
+	  
+	  $("a").on('click', function(event) { // Adiciona rolagem pra todos os links (tag <a>)
+
+		
+		if (this.hash !== "") { // ativa "Se href do link não tiver vazio"
+		  
+		  event.preventDefault(); // Previne comportamentos padrão qndo clica em links
+
+		  
+		  var hash = this.hash; //  Guarda o 'href' em uma variavel
+
+		  //Usando o método animate() do jQuery pra adicionar a rolagem lisa
+		  $('html, body').animate({
+			scrollTop: $(hash).offset().top
+		  }, 800, function(){ // O número (800) é quantos milisegundos demora pra rolar até o local
+	   
+			
+			window.location.hash = hash; // Adiciona hash (#) no URL (endereço da pagina) quando termina de rolar (Isso é um comportamento padrão só q foi prevenido lá em cima)
+		  });
+		} // Fim do if
+	  });
+	});
 
       </script>
      
