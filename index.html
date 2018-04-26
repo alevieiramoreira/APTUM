@@ -8,12 +8,12 @@
       <link rel="stylesheet" href="css.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!--link do bootsrap-->
       <link rel="shortcut icon"  href="imagens/APTUMicon2.png">
-</head>
+
       <script src="https://code.jquery.com/jquery-3.3.1.js"></script> <!--link do jquery-->
 </head>
       <body>
       <div class="wrapper"><!--Um wrapper é algo que envolve um único objeto para fornecer mais funcionalidade e interface para ele-->
-            <header a id="Home">
+            <header id="Home">
                 <nav> <!-- conjunto de links de navegação.-->
                     <div class="menu-icon">
                         <i class="fa fa-bars fa-2x"></i><!--para ter o icone e o tamanho-->
@@ -23,7 +23,7 @@
                         <img src="imagens/aptum.png">
                     </div>
 
-                    <div class="menu">
+                    <div class="menu" id="desce">
                         <ul>
                               <a href="#Home"><li>Home</li></a>
                               <a href="#Produto"><li>E-Scale</li></a>
@@ -34,7 +34,7 @@
                         </ul>
                     </div>
                 </nav>
-                      <div href="#" class="frasep">Fazendo sempre algo a mais</div> 
+                      <div class="frasep">Fazendo sempre algo a mais</div> 
             </header>
 
 
@@ -45,7 +45,7 @@
                               <div class="textocorpo">De fato, tanto as expressões espanhola e portuguesa empresa como as acepções francesa e inglesa entrepreneur procedem etimologicamente do verbo latino in prehendo-endi-ensum, que significa descobrir, ver, perceber, dar-se conta de, capturar; e a expressão latina in prehensa comporta claramente a ideia de ação, no sentido de tomar, agarrar. Em suma, empresa é sinônimo de ação, sendo que na França já há muito tempo, na Alta Idade Média, se utilizava o termo entrepreneur para designar as pessoas encarregadas de efetuar ações importantes, geralmente relacionadas com a guerra, ou de levar a cabo os grandes projetos relacionados com a construção de catedrais. No castelhano, um dos significados do termo empresa, de acordo com o Diccionario da Real Academia Espanhola, é o de "ação árdua e difícil que se inicia valorosamente".  
                               </div>
                           </div>
-                          <div href="#" class="botaop2">Saiba mais</div> 
+                          <a href="empresa.html"><div class="botaop2">Saiba mais</div></a> 
                               <div class='caixaCor'><!--div que é o quadrado azul com a imagem do chocolate-->
                                   <img src='imagens/arduino.jpg'> <!--tag html img especificando o caminho da imagem do chocolate-->
                               </div>
@@ -65,7 +65,7 @@
             <div class="pagina" id='Empresa'>
                 <div class='caixaCor'> <img src='imagens/empresa.png'> </div>
                 <div class='caixa'> <br><br><div class="titulo">APTUM</div>O Arduino foi criado em 2005 por um grupo de 5 pesquisadores : Massimo Banzi, David Cuartielles, Tom Igoe, Gianluca Martino e David Mellis. O objetivo era elaborar um dispositivo que fosse ao mesmo tempo barato, funcional e fácil de programar, sendo dessa forma acessível a estudantes e projetistas amadores. Além disso, foi adotado o conceito de hardware livre, o que significa que qualquer um pode montar, modificar, melhorar e personalizar o Arduino, partindo do mesmo hardware básico. </div>
-                <div href="produto.html" class="botaop3">Saiba mais</div>
+                <a href="empresa.html"><div class="botaop3">Saiba mais</div></a>
             </div>
             
                   
@@ -75,7 +75,8 @@
                    
                 </div>
                 </section>
-
+    
+            </div>
                  <footer>
                 <div class="parcerias">
                 <div class="opacidade">
@@ -140,9 +141,8 @@ Nota: A overflowpropriedade só funciona para elementos de bloco com uma altura 
 
 
             </div>
-             </div>        
-            </div>
-
+             </div>    
+                     
             <div class="rodape" id="Contatos">
 			
 				<div class='areasRodape'>
@@ -219,6 +219,15 @@ Nota: A overflowpropriedade só funciona para elementos de bloco com uma altura 
         </footer>
 
              <script type="text/javascript">
+                 
+                 var menu = document.getElementById('desce'); //Coloca o elemento com o ID 'menu' em uma variavel
+                 menu.style.marginTop='-100px'; // Muda a margin-top do menu pra -100px
+                 
+                 onload = function(){ //qndo a pagina carrega essa função é ativada
+                     menu.style.transition='0.5s ease-in'; //muda a transição do menu pra um tempo de 0.5 segundos e ease-in(mais lento no começo da transição)
+                     menu.style.marginTop='0'; //Muda a margin-top do menu de volta pra 0
+                     
+                 };
 
       // Scrolling Effect
 	
@@ -230,7 +239,7 @@ Nota: A overflowpropriedade só funciona para elementos de bloco com uma altura 
             else {
                   $('nav').removeClass('black');//Caso ao contrario quando estiver no topo vai remover a "cor escolhida"
             }
-      })
+      });
 	  
 	  
 	  //Rolagem lisa qndo clica nos links do menu
