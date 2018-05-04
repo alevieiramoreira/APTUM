@@ -1,4 +1,4 @@
-﻿html, body {
+html, body {
       margin: 0;
       padding: 0;
       width: 100%;
@@ -44,9 +44,9 @@ body {
 		background: #5a7b52; 
 	}
 
-/* COMEÇO DO HEADER  DO SITEEE ---------------------------------------------------------------------------------*/
+/* COMEÇO DO HEADER  DO SITE ---------------------------------------------------------------------------------*/
 
-header { /*para definir o cabeçalho do site*/
+header { /*para definir o cabe�alho do site*/
       width: 100%;
       height: 100vh;
       background: url(imagens/polar.jpg) no-repeat 20% 20%;/*tag para colocar imagem e para nao se repitir e o tamenho de espaço coberto em %*/
@@ -205,7 +205,7 @@ nav ul .semBorda:hover{ /*Class usada na tag <li> botão login pra não ter bord
     background-color:#FFF; 
     overflow: hidden;
     float: left;
-    margin-top:-250px;
+    margin-top:0;
 }
 
 .paginaFT{ /*classe com imagem de fundo usada no site*/
@@ -233,7 +233,7 @@ nav ul .semBorda:hover{ /*Class usada na tag <li> botão login pra não ter bord
 	font-style: arial;
 	font-size: 1.2em;
 	text-align: center;
-	margin-top: 250px;
+	margin-top: 0;
 	color: #ddd;
 	filter:  drop-shadow(0px 0px 7px black) opacity(0.5); /*filtro de sombra com deslocamento de 0px pra esquerda, 0px pra baixo
 																desfoque de 7px e cor preta e filtro de opacidade(0.5)*/
@@ -242,7 +242,7 @@ nav ul .semBorda:hover{ /*Class usada na tag <li> botão login pra não ter bord
 }
 
 
-.caixaCor{ /*caixa azul que aparece no site uma vez com a img do chocolate e outra com a img do sensor(iphone)*/
+.caixaCor{ 
     
     height: 100%;
     width: 50%;
@@ -258,38 +258,36 @@ nav ul .semBorda:hover{ /*Class usada na tag <li> botão login pra não ter bord
 
 .caixa{ /*caixa branca que contem alguns textos no site e aparece do lado das caixas azuis*/
    
-    height: 100%;
+    height: 85%;
     width: 30%;
     top: 0;
     left: 0;    float: left;
     font-size: 15px;
     padding: 10%;
-    margin: 2px auto;
+	padding-top: 5%;
 }
 
 .textocorpo{ /*descrição sobre empresa/produto*/
       color:#101810;
       text-align: justify;
-
+	  margin-top: 15%;
 }
 
 .titulo{
-height: 50px;
-width: 350px;
-text-align: center;
-margin-left: 20px;
-margin-top: -100px;
-margin-bottom: 40px;
-font-style:Impact;
-font-weight: 800;
-color: #29525a;
-font-size: 50px;
+	height: 50px;
+	width: 350px;
+	text-align: center;
+	font-style:Impact;
+	font-weight: 800;
+	color: #29525a;
+	font-size: 50px;
+	margin: 5%;
 }
 
 .botaop2{
       width: 80px;
       height: 20px;
-      margin: 550px 0px 0px 250px;
+      margin: 0;
       font-style: arial;
       color:#315241;
       font-size: 15px;
@@ -298,8 +296,10 @@ font-size: 50px;
       border-style: solid;
       border-width: 1px 1px 1px 1px;
       border-color: #315241;
-      position: absolute;
-
+      position: relative;
+	  margin-left: 30%;
+	  float: left;
+	  margin-top: 10%;
 
 }
 .botaop2:hover{
@@ -646,7 +646,7 @@ border-color: #5a7b52;
 
 /*DIVS do perfil*/
 
-.paginaGraf{ /*classe para colocar conteudo como caixas com frases ou caixas com imagens de chocolate*/
+.paginaGraf{
 
     z-index: 1;
     height: 100vh;
@@ -717,7 +717,7 @@ canvas{
 }
 
 
-#termHiddenTrack{
+.termHiddenTrack{
     width: 24%;
     height: 75%;
     margin: 25%;
@@ -727,22 +727,33 @@ canvas{
     position: absolute;
 }
 
+.termTolerancia{
+    width: 24%;
+    height: 75%;
+    margin: 25%;
+    margin-left: 3%;
+    top: 10%;
+    padding-right: 2%;
+    position: absolute;
+}
+
 #txtTemp{
     position: absolute;
-    float: right;
-    right: 0%;
+    float: left;
+    left: 0%;
     color: #4d7761;
     background: rgba(230,230,230,1);
     border-radius: 100px;
-    padding: 2%;
+    padding: 5%;
     text-align: center;
-    font-size: 20px;
+    font-size: 15px;
     transition: .1s;
-    height: 30px;
-    width: 30px;
+    height: 4%;
+    width: auto;
     overflow: hidden;
     border-bottom-left-radius: 0;
     transform: rotate(45deg);
+	min-height: 15px;
 }
 
 #tolerancia{
@@ -751,7 +762,7 @@ canvas{
     position: absolute;
     transition: 0.1s;
     border: solid 1px rgba(230,230,230,1);
-    border-left: none;
+    border-right: none;
 }
 
 #areaCirculo{
@@ -809,7 +820,32 @@ canvas{
 	position: relative;
 	float: left;
 	width: 100%;
-	height: 50%;
-	font-size: 18px;
+	height: 35%;
+	font-size: 15px;
+	padding-top: 15%;
 	border-bottom: solid 1px rgba(230,230,230,1);
+}
+
+
+
+
+
+/*DIVS do login e cadastro*/
+
+#backVideo{
+	height: 100%;
+	width: 100%;
+	background-color: #3c6740;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+#frontVideo{
+	height: 100%;
+	width: 100%;
+	background-color: rgba(30,30,30,0.5);
+	position: relative;
+	top: 0;
+	left: 0;
 }

@@ -46,22 +46,24 @@
               </div>
               
               <div id="areaTerm">
+					<div class="termTolerancia">
+                        <div id="tolerancia">
+                      
+                        </div>
+					</div>
                   <div id="termTrack">
                         <div id="termBar">
                       
                         </div>
                   </div>
-                  <div id="termHiddenTrack">
-                        <div id="tolerancia">
-                      
-                        </div>
+                  <div class="termHiddenTrack">
                         <div id="txtTemp">
                       
                         </div>
                   </div>
               </div>
               <div id="areaDados">
-				<div id='tituloDados'>Dados dos ultimos 10 registros</div>
+				<div id='tituloDados'>Dados dos ultimos 15 registros</div>
 				<div id='areaCirculo'>
 					<div class='espaçoCirculo'>
 						<div class='tituloCirculo'></div>
@@ -217,7 +219,7 @@
 
 
 
-        /*----------------------------------------------Coisas da MARISE-------------------------------------------------*/
+        /*----------------------------------------------Tentem entender a index da Marise antes-------------------------------------------------*/
         var context = document.getElementById("chart").getContext("2d");
 		context.canvas.height='100';
                 context.canvas.width='250';
@@ -229,25 +231,31 @@
 			data: {
                             
 				datasets: [{
-					label: "Temperature x Time",
+					label: "Temperatura por segundo",
 					type: 'line',
-                                        fill: true,
-					backgroundColor: window.chartColors="rgba(230,230,230,0.6)",
-					borderColor: window.chartColors="rgba(230,230,230,1)",
-                                        pointRadius: 10,
+                    fill: true,
+					backgroundColor: "rgba(230,230,230,0.8)",
+					borderColor: "rgba(230,230,230,1)",
+					borderWidth: 2,
+                    pointRadius: 10,
 					pointHoverRadius: 15,
-                                        
-                                        showLine: true
+                    showLine: true
                                         
 				}]
 			},
                        
 			options: {
-                            responsive: true,
+				legend: {
+					labels: {
+						fontColor: "rgb(230,230,230)",
+						fontSize: 11
+					}
+				},
+                responsive: true,
 				title: {
 					display: true,
 					text: 'AMBIENTE 1',
-                                        fontColor: "rgba(230,230,230,1)"
+                    fontColor: "rgba(230,230,230,1)"
 				},
 				tooltips: {
 					mode: 'index',
@@ -258,30 +266,26 @@
 					intersect: true
 				},
 				scales: {
-                                        stepSize: 0.2,
 					xAxes: [{
 						//type: 'value',
-                                                
-                                                fontColor: "rgba(230,230,230,0.7)",
-                                                display: false,
+                        fontColor: "rgba(230,230,230,0.7)",
+                        display: false,
 						distribution: 'series',
-                                            ticks: {
-                                                fontColor: "rgba(230,230,230,1)",
-                                                beginAtZero:true,
-                                                
-
-                                            }
+						ticks: {
+							fontColor: "rgba(230,230,230,1)",
+							beginAtZero:true,
+						}
 					}],
 					yAxes: [{
 						scaleLabel: {
-                                                        fontColor: "rgba(230,230,230,0.7)",
+                            fontColor: "rgba(230,230,230,0.7)",
 							display: true,
 							labelString: 'Temperatura'
-                                                },
-                                                    ticks: {
-                                                        fontColor: "rgba(230,230,230,1)",
-                                                        beginAtZero:true
-                                                    }
+                        },
+						ticks: {
+							fontColor: "rgba(230,230,230,1)",
+							beginAtZero:true
+						}
 					}]
 				},
 				animation: {
@@ -306,8 +310,8 @@
         
         
         
-        var toleranciamax = 50;
-        var toleranciamin = 5;
+        var toleranciamax = 32;
+        var toleranciamin = 22;
         var tolerancia = document.getElementById('tolerancia');
         tolerancia.style.height=(toleranciamax-toleranciamin)*escala+'%';
         tolerancia.style.top=(100-toleranciamax)*escala+"%";
@@ -321,22 +325,30 @@
 		
         
         function get_data(){
-            obj[obj.length] = obj[obj.length-1]+(Math.floor(Math.random()*5)-2);
+		
+            var http = new XMLHttpRequest();
+            http.open('GET', 'http://localhost:3000/api', false);
+            http.send(null);        
+	
             
-            if(obj[obj.length-1]<=-100){
-                obj[obj.length-1] = -90;
+            var objeto = JSON.parse(http.responseText);
+			
+            if (objeto.data.length === 0){
+                return;
             }
-            else if(obj[obj.length-1]>=100){
-                obj[obj.length-1] = 90;
-            }
+			
+            obj = objeto.data;
+      
+    /*        obj[obj.length] = obj[obj.length-1]+(Math.floor(Math.random()*5)-2); */
             
+          
             if(obj[obj.length-1]<0){
                 
                 termometro.style.top='50%';
                 
                 termometro.style.bottom='auto';
                 termometro.style.height=(obj[obj.length-1]*-1)*escala+'%';
-                txtTemp.style.top = 48+(obj[obj.length-1]*-1)*escala+'%';
+                txtTemp.style.top = 46+(obj[obj.length-1]*-1)*escala+'%';
                 txtTemp.style.bottom = 'auto';
             }
             else{
@@ -344,7 +356,7 @@
                 termometro.style.bottom='50%';
                 termometro.style.height=(obj[obj.length-1])*escala+'%';
                 
-                txtTemp.style.bottom = 48+(obj[obj.length-1])*escala+'%';
+                txtTemp.style.bottom = 46+(obj[obj.length-1])*escala+'%';
                 txtTemp.style.top = 'auto';
             }
             
@@ -358,7 +370,7 @@
                 termometro.style.backgroundColor='rgba(230,230,230,1)';
             }
             
-            txtTemp.textContent = obj[obj.length-1];
+            txtTemp.textContent = obj[obj.length-1]+"°C";
             
             if (obj.length === 0){
                 return;
@@ -385,11 +397,11 @@
 			var base;
 			var listaDados = [];
 			
-			if(obj.length-1<11){
+			if(obj.length-1<16){
 				base = obj.length-1;
 			}
 			else{
-				base = 10;
+				base = 15;
 			}
 			
 			var media = 0;
@@ -409,7 +421,7 @@
                 
         setInterval(() => {
             get_data();
-        }, 200);
+        }, 1000);
         
 		
 		
@@ -454,7 +466,7 @@
 			}
 			variancia = variancia/lista.length;
 			desvioPadrao = Math.sqrt(variancia);
-			txtDesvPad.textContent = desvioPadrao.toFixed(2)+"°C"
+			txtDesvPad.textContent = desvioPadrao.toFixed(2)+"°C";
 		}
       </script>
      
