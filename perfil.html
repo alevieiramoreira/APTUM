@@ -1,0 +1,192 @@
+﻿<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>APTUM - Perfil</title>
+	<link rel="stylesheet" href="css.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!--link do bootsrap-->
+	<link rel="shortcut icon" href="imagens/APTUMicon2.png">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script> <!--link do jquery-->
+
+	<script src="moment.min.js"></script>
+	<script src="Chart.js"></script>
+	<script src="utils.js"></script>
+</head>
+<body>
+		<nav>
+			<!-- conjunto de links de navegação.-->
+			<div class="logo">
+				<!--A class onde insere o logo-->
+				<img src="imagens/aptum.png">
+			</div>
+
+			<div class="menu" id="desce">
+				<ul>
+					<a href="#Home"><li>Home</li></a>
+					<a href="#Produto"><li>E-Scale</li></a>
+					<a href="#Empresa"><li>APTUM™</li></a>
+					<a href="#Contatos"><li>Contatos</li></a>
+
+					<a href="Gerenciamento.html" class="btnPerfil">
+						Gerenciar Ambientes e Espécies
+					</a>
+					<a href="Relatorios.html" class="btnPerfil">
+						Relatórios
+					</a>
+
+				</ul>
+			</div>
+		</nav>
+
+
+		<div class="paginaGraf">
+			<div id="areaGraf">
+
+				<canvas id="chart"></canvas>
+				<div id="areaTabela">
+
+
+					<div id="caixaRolagemTabela">
+						<table id="tabelaTitulo">
+							<tr>
+								<th>Data</th>
+								<th>Hora</th>
+								<th>Temperatura</th>
+								<th>Media</th>
+								<th>Moda</th>
+								<th>Desvio Padrão</th>
+								<th>Minima</th>
+								<th>1º Quartil</th>
+								<th>Mediana</th>
+								<th>3º Quartil</th>
+								<th>Máxima</th>
+							</tr>
+						</table>
+						<table id="tabelaDados"></table>
+					</div>
+				</div>
+			</div>
+
+			<div id="areaTerm">
+				<div class="termTolerancia">
+					<div id="tolerancia">
+
+					</div>
+					<div class="txtTolerancia" id="txtTolMaxima">
+						Max
+						<div id="numTolMax"></div>
+					</div>
+					<div class="txtTolerancia" id="txtTolMinima">
+						Min
+						<div id="numTolMin"></div>
+					</div>
+				</div>
+				<div id="termTrack">
+					<div id="termBar">
+
+					</div>
+				</div>
+				<div class="termHiddenTrack">
+					<div id="txtTemp">
+
+					</div>
+				</div>
+			</div>
+			<div id="areaDados">
+				<div id='tituloDados'>Dados dos ultimos <span id="maxRegistrosCalculados"></span> registros</div>
+				<div id='areaCirculo'>
+					<div class='espaçoCirculo'>
+						<div class='tituloCirculo'></div>
+						<div class='circuloDadosCima' id='Media'></div>
+						<div class='tituloCirculo'>Média</div>
+					</div>
+
+					<div class='espaçoCirculo'>
+						<div class='tituloCirculo'></div>
+						<div class='circuloDadosCima' id="DesvPad"></div>
+						<div class='tituloCirculo'>Desvio Padrão</div>
+					</div>
+
+					<div class='espaçoCirculo'>
+						<div class='tituloCirculo'>Moda</div>
+						<div class='circuloDadosCima' style="padding-top: 0; height: 70px;">
+							<div class='lugarzinhoNoCirculo' id='Moda'></div>
+
+							<div class='lugarzinhoNoCirculo' id='Freq'></div>
+						</div>
+						<div class='tituloCirculo'>Frequência</div>
+					</div>
+
+				</div>
+				<div class="QuartilInfo">
+					<div class="AreaQuartil">
+						<div class="TituloQuartil">
+							Min
+						</div>
+						<div class="Quartil" id="txtMin">
+							0.00
+						</div>
+					</div>
+					<div class="AreaQuartil">
+						<div class="TituloQuartil">
+							1º Quartil
+						</div>
+						<div class="Quartil" id="txtQ1">
+							0.00
+						</div>
+					</div>
+					<div class="AreaQuartil">
+						<div class="TituloQuartil">
+							Mediana
+						</div>
+						<div class="Quartil" id="txtQ2">
+							0.00
+						</div>
+					</div>
+					<div class="AreaQuartil">
+						<div class="TituloQuartil">
+							3º Quartil
+						</div>
+						<div class="Quartil" id="txtQ3">
+							0.00
+						</div>
+					</div>
+					<div class="AreaQuartil">
+						<div class="TituloQuartil">
+							Max
+						</div>
+						<div class="Quartil" id="txtMax">
+							0.00
+						</div>
+					</div>
+				</div>
+				<div class="dadosAmbiente">
+					<div class='infoAmbiente'>
+						Casa dos Répteis
+					</div>
+					<div class='infoAmbiente'>
+						<div>tolerancia:</div> <span id='lblToleranciaMin'></span>°C - <span id='lblToleranciaMax'></span>ºC
+					</div>
+					<div class='infoAmbiente'>
+						Area: 30m³
+					</div>
+					<div class='infoAmbiente'>
+						Animal: Lagarto
+					</div>
+					<div class='infoAmbiente'>
+						Sensores: 1
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+        
+        <script type="text/javascript" charset="windows-1252" src="scriptGrafico.js">
+
+        </script>
+
+</body>
+</html>

@@ -1,173 +1,236 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Aptum</title>
+      <title>APTUM</title>
       <link rel="stylesheet" href="css.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!--link do bootsrap-->
-      <link rel="shortcut icon"  href="imagens/camaleaoicon.png">
-</head>
+      <link rel="shortcut icon"  href="imagens/APTUMicon2.png">
+
       <script src="https://code.jquery.com/jquery-3.3.1.js"></script> <!--link do jquery-->
 </head>
       <body>
-      <div class="wrapper"><!--Um wrapper é algo que envolve um único objeto para fornecer mais funcionalidade e interface para ele-->
-            <header>
+            <header class="header0">
                 <nav> <!-- conjunto de links de navegação.-->
-                    <div class="menu-icon">
-                        <i class="fa fa-bars fa-2x"></i><!--para ter o icone e o tamanho-->
-                    </div>
-
                     <div class="logo"><!--A class onde insere o logo-->
-                        <img src="imagens/aptum.png " width="170px" height="50px" style="margin-top: -12px">
+                        <img src="imagens/aptum.png">
                     </div>
 
-                    <div class="menu">
+                    <div class="menu" id="desce">
                         <ul>
-                              <li><a href="#">Home</a></li>
-                              <li><a href="#">Empresa</a></li>
-                              <li><a href="#">Produto</a></li>
-                              <li><a href="#">Contatos</a></li>
-                              <li><a href="#" class="l">Login</a></li>
+                              <a href="#Home"><li>Home</li></a>
+                              <a href="#Produto"><li>E-Scale</li></a>
+                              <a href="#Empresa"><li>APTUM™</li></a>
+                              <a href="#Contatos"><li>Contatos</li></a>
+							  <li class='semBorda'>
+								 	<a href="login.aspx" class="l">
+									  Login
+									</a>
+									<a href="Cadastro.aspx" class="l">
+										Cadastre-se
+									</a>
+								</li> <!--Class 'semBorda' usada na tag <li> botão login pra não ter borda quando dar hover-->
 
                         </ul>
                     </div>
                 </nav>
-                      <div href="#" class="botaop">Cadastra-se</div> 
+                      <div class="frasep">Fazendo sempre algo a mais</div> 
             </header>
 
 
             <section>
-                  <div class="pagina" id='empresa'> <!--Div caixa q é o quadrado meio banco, nesse caso do lado do chocolate com uma frase-->
-                      <div class='caixa'> <br><br>
-                          <div class="titulo">Produto</div>
-                              <div class="textocorpo">De fato, tanto as expressões espanhola e portuguesa empresa como as acepções francesa e inglesa entrepreneur procedem etimologicamente do verbo latino in prehendo-endi-ensum, que significa descobrir, ver, perceber, dar-se conta de, capturar; e a expressão latina in prehensa comporta claramente a ideia de ação, no sentido de tomar, agarrar. Em suma, empresa é sinônimo de ação, sendo que na França já há muito tempo, na Alta Idade Média, se utilizava o termo entrepreneur para designar as pessoas encarregadas de efetuar ações importantes, geralmente relacionadas com a guerra, ou de levar a cabo os grandes projetos relacionados com a construção de catedrais. No castelhano, um dos significados do termo empresa, de acordo com o Diccionario da Real Academia Espanhola, é o de "ação árdua e difícil que se inicia valorosamente".  
-                              </div>
-                          </div>
-                          <div href="#" class="botaop2">Saiba mais</div> 
-                              <div class='caixaCor'><!--div que é o quadrado azul com a imagem do chocolate-->
-                                  <img src='imagens/arduino.jpg'> <!--tag html img especificando o caminho da imagem do chocolate-->
-                              </div>
-                      </div>
+				  <div class="pagina" id='Produto'> <!--Div caixa q é o quadrado meio banco, nesse caso do lado do chocolate com uma frase-->
+					  <div class='caixa'>
+						  <div class="titulo">Project E-Scale</div>
+							  <div class="textocorpo">
+								  Entenda como a APTUM desenvolve seu produto com responsabilidade e excelência,
+								  auxiliando nossos clientes com os cuidados e prevenções com seus pets, procurando adaptar-se 
+								  de acordo com a necessidade das empresas ou das residências que contratam nossos serviços.   
+							  </div>
+							  
+							  <a href="produto.html">
+								  <div class="botaop2">
+									Saiba Mais 
+								  </div> 
+							  </a>
+						  </div>
+							  <div class='caixaCor'><!--div que é o quadrado azul com a imagem do chocolate-->
+								  <img src='imagens/arduino.jpg'> <!--tag html img especificando o caminho da imagem do chocolate-->
+							  </div>
+					  </div>
             
                   <!--Div que contem a foto do peixe, 
                   que nesse caso está sendo definida como background da div através do css inline-->
-            <div class="paginaFT" style="background-image: url('imagens/raposa.jpg')">
-                  
-                        <!--div transparente com uma frase que fica na div com a foto do peixe-->
-                <div class="textoFT">
-                    Construa um mundo melhor!
-                </div>
-            </div>
+            
             
                   <!--mesmo caso da div com id ='empresa'-->
-            <div class="pagina" id='produto'>
+            <div class="pagina" id='Empresa'>
                 <div class='caixaCor'> <img src='imagens/empresa.png'> </div>
-                <div class='caixa'> <br><br><div class="titulo">Empresa</div>O Arduino foi criado em 2005 por um grupo de 5 pesquisadores : Massimo Banzi, David Cuartielles, Tom Igoe, Gianluca Martino e David Mellis. O objetivo era elaborar um dispositivo que fosse ao mesmo tempo barato, funcional e fácil de programar, sendo dessa forma acessível a estudantes e projetistas amadores. Além disso, foi adotado o conceito de hardware livre, o que significa que qualquer um pode montar, modificar, melhorar e personalizar o Arduino, partindo do mesmo hardware básico. </div>
-                <div href="produto.html" class="botaop3">Saiba mais</div>
+                <div class='caixa'>
+					<div class="titulo">
+						APTUM
+					</div>
+					<div class="textocorpo">
+						Afinal, quem somos? Conheça nossas origens, a equipe por trás de tudo, nossos objetivos e valores. 
+					</div>
+					<a href="empresa.html">
+						<div class="botaop2">
+							Saiba mais
+						</div>
+					</a>
+				</div>
             </div>
-            
-                  
-                  <!--mesmo caso da div com a foto do peixe de fundo-->
     
-                <div class="textoFT">
-                   
-                </div>
-                </section>
+        	</section>
 
                  <footer>
                 <div class="parcerias">
                 <div class="opacidade">
-                  <div class="divpacerias">
-                  <div class="textop">TIVIT</div>
+                  <div class="divpacerias"> <!--Cada caixa das empresas é uma divParceria-->
+				  <div class='bgImg'> <!--div pra colocar a img do logo das empresas parceiras-->
+					<img src="imagens/logo1.png">
+				  </div>
+                  <div class="textop">Frutech</div>
 
-                  <p>A overflowpropriedade especifica o que deve acontecer se o conteúdo transborda caixa de um elemento.
-Esta propriedade especifica se para cortar conteúdo ou adicionar barras de rolagem quando o conteúdo de um elemento é grande demais para caber em uma área especificada.
-Nota: A overflowpropriedade só funciona para elementos de bloco com uma altura especificada.</p>
-
-                  </div>
-                  <div class="divpacerias">
-                  <div class="textop">STAFANINI</div>
-                                    <p>A overflowpropriedade especifica o que deve acontecer se o conteúdo transborda caixa de um elemento.
-Esta propriedade especifica se para cortar conteúdo ou adicionar barras de rolagem quando o conteúdo de um elemento é grande demais para caber em uma área especificada.
-Nota: A overflowpropriedade só funciona para elementos de bloco com uma altura especificada.</p>
+                  <p></p>
 
                   </div>
-
                   <div class="divpacerias">
-                  <div class="textop">TOTVS</div>
-                                    <p>A overflowpropriedade especifica o que deve acontecer se o conteúdo transborda caixa de um elemento.
-Esta propriedade especifica se para cortar conteúdo ou adicionar barras de rolagem quando o conteúdo de um elemento é grande demais para caber em uma área especificada.
-Nota: A overflowpropriedade só funciona para elementos de bloco com uma altura especificada.</p>
-
-
+				  <div class='bgImg'> <!--div pra colocar a img do logo das empresas parceiras-->
+					<img src="imagens/logo2.png">
+				  </div>
+                  <div class="textop">Snowy</div>
+                                    <p></p>
 
                   </div>
 
                   <div class="divpacerias">
-                  <div class="textop">DIGISYSTEM</div>
-                                    <p>A overflowpropriedade especifica o que deve acontecer se o conteúdo transborda caixa de um elemento.
-Esta propriedade especifica se para cortar conteúdo ou adicionar barras de rolagem quando o conteúdo de um elemento é grande demais para caber em uma área especificada.
-Nota: A overflowpropriedade só funciona para elementos de bloco com uma altura especificada.</p>
+				  <div class='bgImg'> <!--div pra colocar a img do logo das empresas parceiras-->
+					<img src="imagens/logo3.png">
+				  </div>
+                  <div class="textop">Pollo</div>
+                                    <p></p>
+
+
 
                   </div>
 
                   <div class="divpacerias">
-                  <div class="textop">EASYNVEST</div>
-                                    <p>A overflowpropriedade especifica o que deve acontecer se o conteúdo transborda caixa de um elemento.
-Esta propriedade especifica se para cortar conteúdo ou adicionar barras de rolagem quando o conteúdo de um elemento é grande demais para caber em uma área especificada.
-Nota: A overflowpropriedade só funciona para elementos de bloco com uma altura especificada.</p>
+				  <div class='bgImg'> <!--div pra colocar a img do logo das empresas parceiras-->
+					<img src="imagens/logo4.png">
+				  </div>
+                  <div class="textop">AgroPeace</div>
+                                    <p></p>
+
+                  </div>
+
+                  <div class="divpacerias"> 
+				  <div class='bgImg'> <!--div pra colocar a img do logo das empresas parceiras-->
+					<img src="imagens/logo6.png">
+				  </div>
+                  <div class="textop">Infinitus</div>
+                                    <p></p>
               
 
                   </div>
+				  
 
 
             </div>
-             </div>        
-            </div>
-
-            <div class="rodape">
-            <div class="textoajuda"> <h1>Duvidas</h1>
-            <h3> Tire duvidas sobre o nosso produto<br><br>
-             Está precisando de ajuda?<br>
-            <div class="botaoj">Ajuda</div>
-            </h3> 
-            <div>
-
-            <div class="textocontato"><h1>Contato</h1>
-            <img src="imagens/icone.png">
-             <h3>Empresa Aptum<br>
-            Telefone1: (11)93007-2537<br>
-            Telefone2: (11)97044-4821<br>
-            Email: Aptum@gmail.com</h3>
-            </div>
-
-
-            <div class="textolocalizacao"><h1>Localização</h1>
-            <img src="imagens/icone2.png">
-            <h3>
-            Empresa Aptum<br>
-            Rua: Jacob Piatto (120)<br>
-            Bairro: Baeta Neves<br>
-            Cidade: São Bernado do Campo (SP)<br></h3>
-            </div>
-
-
-            <div class="redes"><h1>Redes Sociais</h1>
-            <a href="http://facebook.com"><img src="imagens/facebook2.png" class="img1"></a>
-            <a href="https://www.instagram.com/?hl=pt-br"><img src="imagens/instagram2.png"></a>
-            <a href="https://www.linkedin.com/uas/login?_l=pt"><img src="imagens/linkedin2.png"></a>
-            <a href="https://twitter.com/login?lang=pt"><img src="imagens/twitter2.png"></a>
-            </div>
+             </div>    
+                     
+            <div class="rodape" id="Contatos">
+			
+				<div class='areasRodape'>
+					<div class='tituloAreaRodape'>Localização</div>
+					<div class='icone'>
+						<img src='imagens/local.png'>
+					</div>
+					<div class='conteudoAreaRodape'>
+						Rua Haddock Lobo
+						<br> 595
+					</div>			
+					<div class='conteudoAreaRodape'>
+						Cerqueira César 
+						<br>São Paulo - SP
+					</div>
+				</div>
+				
+				<div class='areasRodape'>
+				
+					<div class='tituloAreaRodape'>Redes Sociais</div>
+					<br>
+					<div class='icone'>
+						<a href="http://facebook.com"><img src='imagens/facebook2.png'></a>
+					</div>
+					<div class='icone'>
+						<a href="http://facebook.com"><img src='imagens/twitter2.png'></a>
+					</div>
+					<div class='icone'>
+						<a href="http://facebook.com"><img src='imagens/instagram2.png'></a>
+					</div>
+					<div class='icone'>
+						<a href="http://facebook.com"><img src='imagens/linkedin2.png'></a>
+					</div>
+					<div class='icone'>
+						<a href="http://facebook.com"><img src='imagens/g+2.png'></a>
+					</div>
+				</div>
+				
+				<div class='areasRodape'>
+					<div class='tituloAreaRodape' style="border-top: solid 0px;">Fale conosco</div> <!--Mudem pra a border-top pra 1px se quiserem a linha no meio do rodapé-->
+					<div class='icone'>
+						<img src='imagens/contato.png'>
+					</div>
+					<div class='conteudoAreaRodape'>0800 777 7000
+						<br> 4002-8922
+					</div>			
+					<div class='conteudoAreaRodape'>APTUM Enterprise
+						<br> APTUM@gmail.com
+					</div>
+				</div>
+				
+				<div class='areasRodape'>
+					<div class='tituloAreaRodape' style="border-top: solid 0px;">Alguma Dúvida?</div> <!--Mudem pra a border-top pra 1px se quiserem a linha no meio do rodapé-->
+					<div class='icone'>
+						<img src='imagens/duvidas.png'>
+					</div>
+					<a href="faq.aspx">
+					    <div class="botaoj">Ajuda</div>
+                    </a>
+				</div>
+				
+				<div class="areaRodapeDireitosReservados">
+					APTUM™
+					<br>
+					2018
+					<br>
+					Todos os direitos reservados
+					<br>
+					<div class='icone'>
+						<img src='imagens/camaleaoicon.png'>
+					</div>
+				</div>
+				
             </div>
         </footer>
 
              <script type="text/javascript">
+                 
+                 var menu = document.getElementById('desce'); //Coloca o elemento com o ID 'menu' em uma variavel
+                 menu.style.marginTop=-100+'px'; // Muda a margin-top do menu pra -100px
+                 
+                 onload = function(){ //qndo a pagina carrega essa função é ativada
+                     menu.style.transition='.5s'; //muda a transição do menu pra um tempo de 0.5 segundos e ease-in(mais lento no começo da transição)
+                     menu.style.marginTop='0'; //Muda a margin-top do menu de volta pra 0
+                     
+                 };
 
       // Scrolling Effect
-
-      $(window).on("scroll", function() { //Rola a janela para uma posição específica no documento e a tag "scroll" e uma tag que faz a exibição do objeto.
+	
+      $(window).on("scroll load", function() { //Rola a janela para uma posição específica no documento e a tag "scroll" e uma tag que faz a exibição do objeto.
             if($(window).scrollTop()) { //Onde quando a barra navegar estiver no "scrollTop" no topo da pagina vai exercer essa função
                   $('nav').addClass('black');//Onde as condiçoes são quando a barra de navegação conhecida como "nav" nao estiver no topo vai adicionar a "cor" escolhida
             }
@@ -175,7 +238,33 @@ Nota: A overflowpropriedade só funciona para elementos de bloco com uma altura 
             else {
                   $('nav').removeClass('black');//Caso ao contrario quando estiver no topo vai remover a "cor escolhida"
             }
-      })
+      });
+	  
+	  
+	  //Rolagem lisa qndo clica nos links do menu
+	  $(document).ready(function(){
+	  
+	  $("a").on('click', function(event) { // Adiciona rolagem pra todos os links (tag <a>)
+
+		
+		if (this.hash !== "") { // ativa "Se href do link não tiver vazio"
+		  
+		  event.preventDefault(); // Previne comportamentos padrão qndo clica em links
+
+		  
+		  var hash = this.hash; //  Guarda o 'href' em uma variavel
+
+		  //Usando o método animate() do jQuery pra adicionar a rolagem lisa
+		  $('html, body').animate({
+			scrollTop: $(hash).offset().top
+		  }, 800, function(){ // O número (800) é quantos milisegundos demora pra rolar até o local
+	   
+			
+			window.location.hash = hash; // Adiciona hash (#) no URL (endereço da pagina) quando termina de rolar (Isso é um comportamento padrão só q foi prevenido lá em cima)
+		  });
+		} // Fim do if
+	  });
+	});
 
       </script>
      

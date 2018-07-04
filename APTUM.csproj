@@ -1,0 +1,283 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6CC65192-7E7D-4C98-9DCE-3E3D0DABF0CE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>APTUM</RootNamespace>
+    <AssemblyName>APTUM</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cadastro.aspx" />
+    <Content Include="debug.log" />
+    <Content Include="Faq.aspx" />
+    <Content Include="Faq.csproj" />
+    <Content Include="Faq.csproj.user" />
+    <Content Include="faq.css" />
+    <Content Include="Gerenciamento.aspx" />
+    <Content Include="Gerenciamento.html" />
+    <Content Include="imagens\agropeace.png" />
+    <Content Include="imagens\aleh.jpg" />
+    <Content Include="imagens\aves.png" />
+    <Content Include="imagens\avicultura.png" />
+    <Content Include="imagens\BATATA.png" />
+    <Content Include="imagens\bia.jpg" />
+    <Content Include="imagens\biaf.jpg" />
+    <Content Include="imagens\biel.jpg" />
+    <Content Include="imagens\chick.png" />
+    <Content Include="imagens\clientes.png" />
+    <Content Include="imagens\dog.png" />
+    <Content Include="imagens\fox.png" />
+    <Content Include="imagens\gmail.png" />
+    <Content Include="imagens\grafico.png" />
+    <Content Include="imagens\grupo.jpg" />
+    <Content Include="imagens\henrique.jpg" />
+    <Content Include="imagens\lemur.png" />
+    <Content Include="imagens\logo1.png" />
+    <Content Include="imagens\logo2.png" />
+    <Content Include="imagens\logo3.PNG" />
+    <Content Include="imagens\logo4.png" />
+    <Content Include="imagens\logo5.png" />
+    <Content Include="imagens\logo6.png" />
+    <Content Include="imagens\missao.png" />
+    <Content Include="imagens\natureza.png" />
+    <Content Include="imagens\periquito.png" />
+    <Content Include="imagens\petshop.png" />
+    <Content Include="imagens\produto.jpg" />
+    <Content Include="imagens\residencia.png" />
+    <Content Include="imagens\segurança.png" />
+    <Content Include="imagens\sextou.png" />
+    <Content Include="imagens\tiger.png" />
+    <Content Include="imagens\turtle.png" />
+    <Content Include="imagens\valores.png" />
+    <Content Include="imagens\vet.png" />
+    <Content Include="imagens\whale.png" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <None Include="packages.config" />
+    <Content Include="perfil.aspx" />
+    <Content Include="README.md" />
+    <None Include="Properties\PublishProfiles\APTUM - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\APTUM - Web Deploy.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\controller.js" />
+    <Content Include="app\serial.js" />
+    <Content Include="cadastro.html" />
+    <Content Include="CHART.JS" />
+    <Content Include="css.css" />
+    <Content Include="Empresa.html" />
+    <Content Include="Global.asax" />
+    <Content Include="imagens\aptum.png" />
+    <Content Include="imagens\APTUMicon.png" />
+    <Content Include="imagens\APTUMicon1.png" />
+    <Content Include="imagens\APTUMicon2.png" />
+    <Content Include="imagens\APTUMicon3.png" />
+    <Content Include="imagens\APTUMiconTransparente.png" />
+    <Content Include="imagens\APTUMiconWhite.png" />
+    <Content Include="imagens\arduino.jpg" />
+    <Content Include="imagens\blackAptum.png" />
+    <Content Include="imagens\camaleaoicon.png" />
+    <Content Include="imagens\contato.png" />
+    <Content Include="imagens\digisystem.jpg" />
+    <Content Include="imagens\digisystem.png" />
+    <Content Include="imagens\duvidas.png" />
+    <Content Include="imagens\easynvest.png" />
+    <Content Include="imagens\empresa.jpg" />
+    <Content Include="imagens\empresa.mp4" />
+    <Content Include="imagens\empresa.png" />
+    <Content Include="imagens\facebook.png" />
+    <Content Include="imagens\facebook2.png" />
+    <Content Include="imagens\falcao.jpg" />
+    <Content Include="imagens\g+2.png" />
+    <Content Include="imagens\icone.png" />
+    <Content Include="imagens\icone2.png" />
+    <Content Include="imagens\img.jpg" />
+    <Content Include="imagens\instagram.png" />
+    <Content Include="imagens\instagram2.png" />
+    <Content Include="imagens\lemure.png" />
+    <Content Include="imagens\linkedin.png" />
+    <Content Include="imagens\linkedin2.png" />
+    <Content Include="imagens\local.png" />
+    <Content Include="imagens\polar.jpg" />
+    <Content Include="imagens\raposa.jpg" />
+    <Content Include="imagens\stefanini.png" />
+    <Content Include="imagens\suricato.jpg" />
+    <Content Include="imagens\tivit.png" />
+    <Content Include="imagens\totvs.png" />
+    <Content Include="imagens\twitter.png" />
+    <Content Include="imagens\twitter2.png" />
+    <Content Include="index.html" />
+    <Content Include="login.aspx" />
+    <Content Include="login.html" />
+    <Content Include="moment.min.js" />
+    <Content Include="perfil.html" />
+    <Content Include="Produto.html" />
+    <Content Include="Relatorios.html" />
+    <Content Include="scriptDados.js" />
+    <Content Include="scriptGrafico.js" />
+    <Content Include="server.js" />
+    <Content Include="utils.js" />
+    <Content Include="Videos\v0.mp4" />
+    <Content Include="Videos\v10.mp4" />
+    <Content Include="Videos\v11.mp4" />
+    <Content Include="Videos\v12.mp4" />
+    <Content Include="Videos\v13.mp4" />
+    <Content Include="Videos\v14.mp4" />
+    <Content Include="Videos\v2.mp4" />
+    <Content Include="Videos\v3.mp4" />
+    <Content Include="Videos\v4.mp4" />
+    <Content Include="Videos\v5.mp4" />
+    <Content Include="Videos\v7.mp4" />
+    <Content Include="Videos\v9.mp4" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Faq.aspx.cs">
+      <DependentUpon>Faq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Faq.aspx.designer.cs">
+      <DependentUpon>Faq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gerenciamento.aspx.cs">
+      <DependentUpon>Gerenciamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gerenciamento.aspx.designer.cs">
+      <DependentUpon>Gerenciamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfil.aspx.cs">
+      <DependentUpon>perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfil.aspx.designer.cs">
+      <DependentUpon>perfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54031</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54031/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
