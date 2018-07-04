@@ -1,0 +1,508 @@
+﻿<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="css.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!--link do bootsrap-->
+        <link rel="shortcut icon"  href="imagens/APTUMicon2.png">
+        <title>
+            APTUM - Gerenciamento
+        </title>
+    </head>
+    <body>
+        <nav> <!-- conjunto de links de navegação.-->
+            <div class="black">
+                <div class="logo"><!--A class onde insere o logo-->
+                    <img src="imagens/aptum.png">
+                </div>
+
+                <div class="menu" id="desce">
+                    <ul style="background-color: rgb(90,123,82);">
+                        <a href="#Home"><li>Home</li></a>
+                        <a href="#Produto"><li>E-Scale</li></a>
+                        <a href="#Empresa"><li>APTUM™</li></a>
+                        <a href="#Contatos"><li>Contatos</li></a>
+                        <li class='semBorda'>
+                                <a href="Relatorios.html" class="btnPerfil">
+                                        Gerar Relatórios
+                                </a>
+                                <a href="Perfil.html" class="btnPerfil">
+                                        Voltar ao Perfil
+                                </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="paginaGraf">
+            <div id="containerGerenciamentoEsq">
+                <div class="tituloGerenciamento">
+                    Gerenciar Ambientes
+                </div>
+                <div class="btnGerenciamento" onclick="ambiente('cadastrar')">
+                    Cadastrar Ambiente
+                </div>
+                <div class="btnGerenciamento"  onclick="ambiente('editar')">
+                    Editar Ambiente
+                </div>
+                <div class="btnGerenciamento"  onclick="ambiente('excluir')">
+                    Excluir Ambiente
+                </div>
+            </div>
+            <div id="containerGerenciamentoDir">
+                <div class="tituloGerenciamento">
+                    Gerenciar Espécies
+                </div>
+                <div class="btnGerenciamento"  onclick="especie('cadastrar')">
+                    Cadastrar Espécies
+                </div>
+                <div class="btnGerenciamento"  onclick="especie('editar')">
+                    Editar Espécies
+                </div>
+                <div class="btnGerenciamento"  onclick="especie('excluir')">
+                    Excluir Espécies
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+        <form>
+        
+        <div class="transparenciaGerenciamento" id="cadAmb">
+            <div class="formAmbiente">
+                <div class="x" onclick="x('cadAmb')">x</div>
+                            <div class="campos">
+                                <label class="lbl" for="txtNomeAmb">Nome do Ambiente</label>
+                                <input type="text" id= "txtNomeAmb"/>
+                            </div>
+                            <div class="camposSmall">
+                                <label class="lbl" for="txtMedida">Medida</label>
+                                <input type="number" id= "txtMedida"/>
+                            </div>
+                
+                            <div class="camposSmall">
+                                <label class="lbl">Unidade de medida</label>
+                                <div class='radios'>
+                                    <input type="radio" name="undMed" value="m2" checked>
+                                </div>
+                                <div class='radios'>
+                                    m2
+                                </div>
+                                
+                                <div class='radios'>
+                                    <input type="radio" name="undMed" value="m3">
+                                </div>
+                                <div class='radios'>
+                                    m3
+                                </div>
+                            </div>
+                            <div class="campos">
+                                <label class="lbl" for="txtEspecie">Especie</label>
+                                    <select name="txtEspecie">
+                                      <option value="1">Espécie q ta no banco</option>
+                                      <option value="2">Largato</option>
+                                      <option value="3">Charmander</option>
+                                      <option value="4">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</option>
+                                    </select>
+                            </div>
+                
+                            
+                            <div class="camposSmall">
+                                <label class="lbl" for="txtMaxAmb">Temperatura maxima</label>
+                                <input type="number" id= "txtMaxAmb"/>
+                            </div>
+                                
+                            <div class="camposSmall">    
+                                <label class="lbl" for="txtMinAmb">Temperatura minima</label>
+                                <input type="number" id= "txtMinAmb"/>
+                            </div>
+                
+                               <button type="button">Cadastrar Ambiente</button>
+            </div>
+        </div>
+            
+        </form>
+        
+        <div class="transparenciaGerenciamento" id="edtAmb">
+            <div class="formAmbiente">
+                <div class="x" onclick="x('edtAmb')">x</div>
+                
+                            <div class="campos">
+                                
+                                <label class="lbl" for="txtAmbienteEdt">Ambiente á ser editado</label>
+                                <select name="txtAmbienteEdt">
+                                    <option value="1">Ambiente 1</option>
+                                    <option value="2">Casa dos repteis</option>
+                                  </select>
+                            </div>
+                            <div class="campos">
+                                <label class="lbl" for="txtNomeAmbEdt">Nome do Ambiente</label>
+                                <input type="text" id= "txtNomeAmbEdt"/>
+                            </div>
+                            <div class="camposSmall">
+                                <label class="lbl" for="txtMedidaEdt">Medida</label>
+                                <input type="number" id= "txtMedidaEdt"/>
+                            </div>
+                
+                            <div class="camposSmall">
+                                <label class="lbl">Unidade de medida</label>
+                                <div class='radios'>
+                                    <input type="radio" name="undMedEdt" value="m2" checked>
+                                </div>
+                                <div class='radios'>
+                                    m2
+                                </div>
+                                
+                                <div class='radios'>
+                                    <input type="radio" name="undMedEdt" value="m3">
+                                </div>
+                                <div class='radios'>
+                                    m3
+                                </div>
+                            </div>
+                            <div class="campos">
+                                <label class="lbl" for="txtEspecieEdt">Especie</label>
+                                    <select name="txtEspecieEdt">
+                                      <option value="1">Espécie q ta no banco</option>
+                                      <option value="2">Largato</option>
+                                      <option value="3">Charmander</option>
+                                      <option value="4">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</option>
+                                    </select>
+                            </div>
+                
+                            
+                            <div class="camposSmall">
+                                <label class="lbl" for="txtMaxAmbEdt">Temperatura maxima</label>
+                                <input type="number" id= "txtMaxAmbEdt"/>
+                            </div>
+                                
+                            <div class="camposSmall">    
+                                <label class="lbl" for="txtMinAmbEdt">Temperatura minima</label>
+                                <input type="number" id= "txtMinAmbEdt"/>
+                            </div>
+                
+                               <button type="button">Salvar alterações</button>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="transparenciaGerenciamento" id="excAmb">
+            <div class="formAmbiente">
+                <div class="x" onclick="x('excAmb')">x</div>
+                
+                            <div class="campos">
+                                <label class="lbl" for="txtAmbienteExc">Ambiente á ser excluido</label>
+                                    <select name="txtAmbienteExc">
+                                      <option value="1">Ambiente 1</option>
+                                      <option value="2">Casa dos repteis</option>
+                                    </select>
+                            </div>
+                
+                            <div class="campos">
+                                <label class="lbl" for="txtNomeAmbExc">Nome do Ambiente</label>
+                                <input type="text" id= "txtNomeAmbExc"/>
+                            </div>
+                            <div class="camposSmall">
+                                <label class="lbl" for="txtMedidaExc">Medida</label>
+                                <input type="number" id= "txtMedidaExc"/>
+                            </div>
+                
+                            <div class="camposSmall">
+                                <label class="lbl">Unidade de medida</label>
+                                <div class='radios'>
+                                    <input type="radio" name="undMedExc" value="m2" checked>
+                                </div>
+                                <div class='radios'>
+                                    m2
+                                </div>
+                                
+                                <div class='radios'>
+                                    <input type="radio" name="undMedExc" value="m3">
+                                </div>
+                                <div class='radios'>
+                                    m3
+                                </div>
+                            </div>
+                            <div class="campos">
+                                <label class="lbl" for="txtEspecieExc">Especie</label>
+                                    <select name="txtEspecieExc">
+                                      <option value="1">Espécie q ta no banco</option>
+                                      <option value="2">Largato</option>
+                                      <option value="3">Charmander</option>
+                                      <option value="4">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</option>
+                                    </select>
+                            </div>
+                
+                            
+                            <div class="camposSmall">
+                                <label class="lbl" for="txtMaxAmbExc">Temperatura maxima</label>
+                                <input type="number" id= "txtMaxAmbExc"/>
+                            </div>
+                                
+                            <div class="camposSmall">    
+                                <label class="lbl" for="txtMinAmbExc">Temperatura minima</label>
+                                <input type="number" id= "txtMinAmbExc"/>
+                            </div>
+                
+                               <button type="button">Excluir Ambiente</button>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <!--Form de cadastrar espécie-->
+        <div class="transparenciaGerenciamento"  id="cadEsp">
+            <div class="formEspecie">
+                <div class="x" onclick="x('cadEsp')">x</div>
+                        <div class="campos">
+                               <label class="lbl" for="txtNomeEsp">Nome da Espécie</label>
+                               <input type="text" id= "txtNomeEsp"/>
+                           </div>
+
+
+                           <div class="campos">
+                               <label class="lbl" for="txtTemMaxSup">Temperatura Maxima Suportada em graus Celsius</label>
+                               <input type="number" id="txtTemMaxSup"/>
+                           </div>
+
+
+                           <div class="campos">
+                               <label class="lbl" for="txtTemMinSup">Temperatura Minima Suportada em graus Celsius</label>
+                               <input type="number" id="txtTemMinSup"/>
+                           </div>
+
+                               <button type="button">Cadastrar Espécie</button>
+            </div>
+        </div>
+        
+        
+        
+        <!--Form de editar espécie-->
+        <div class="transparenciaGerenciamento"  id="edtEsp">
+            <div class="formEspecie">
+                <div class="x" onclick="x('edtEsp')">x</div>
+                <div class="campos" style="overflow: visible;">
+                    <label class="lbl" for="especiesEdt">Espécie á ser editada</label>
+                    <select name="especiesEdt">
+                      <option value="1">Espécie q ta no banco</option>
+                      <option value="2">Largato</option>
+                      <option value="3">Charmander</option>
+                      <option value="4">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</option>
+                    </select>
+                </div>
+
+                        <div class="campos">
+                            <label class="lbl" for="txtNomeEspEdt">Nome da Espécie</label>
+                            <input type="text" id= "txtNomeEspEdt"/>
+                        </div>
+
+
+                        <div class="campos">
+                            <label class="lbl" for="txtTemMaxSupEdt">Temperatura Maxima Suportada em graus Celsius</label>
+                            <input type="number" id="txtTemMaxSupEdt"/>
+                        </div>
+
+
+                        <div class="campos">
+                            <label class="lbl" for="txtTemMinSupEdt">Temperatura Minima Suportada em graus Celsius</label>
+                            <input type="number" id="txtTemMinSupEdt"/>
+                        </div>
+
+                            <button type="button">Salvar Alterações</button>
+            </div>
+        </div>
+        
+        
+        
+        <!--Form de excluir espécie-->
+        <div class="transparenciaGerenciamento"  id="excEsp">
+            <div class="formEspecie">
+                <div class="x" onclick="x('excEsp')">x</div>
+                    <div class="campos" style="overflow: visible;">
+                        <label class="lbl" for="especiesExc">Espécie á ser excluída</label>
+                        <select name="especiesExc">
+                          <option value="1">Espécie q ta no banco</option>
+                          <option value="2">Largato</option>
+                          <option value="3">Charmander</option>
+                          <option value="4">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</option>
+                        </select>
+                    </div>
+
+                            <div class="campos">
+                                <label class="lbl" for="txtNomeEspExc">Nome da Espécie</label>
+                                <input type="text" id= "txtNomeEspExc"/>
+                            </div>
+
+
+                            <div class="campos">
+                                <label class="lbl" for="txtTemMaxSupExc">Temperatura Maxima Suportada em graus Celsius</label>
+                                <input type="number" id="txtTemMaxSupExc"/>
+                            </div>
+
+
+                            <div class="campos">
+                                <label class="lbl" for="txtTemMinSupExc">Temperatura Minima Suportada em graus Celsius</label>
+                                <input type="number" id="txtTemMinSupExc"/>
+                            </div>
+                            
+                                <button type="button">Excluir Espécie</button>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <script>
+            var menu = document.getElementById('desce'); //Coloca o elemento com o ID 'menu' em uma variavel
+            menu.style.marginTop = '-100px'; // Muda a margin-top do menu pra -100px
+
+            onload = function () { //qndo a pagina carrega essa função é ativada
+                menu.style.transition = '0.5s ease-in'; //muda a transição do menu pra um tempo de 0.5 segundos e ease-in(mais lento no começo da transição)
+                menu.style.marginTop = '0'; //Muda a margin-top do menu de volta pra 0
+            };
+            
+            
+            /*Variaveis dos forms*/
+                
+                //Ambiente
+                
+                var cadAmb = document.getElementById('cadAmb');
+
+                var edtAmb = document.getElementById('edtAmb');
+
+                var excAmb = document.getElementById('excAmb');
+            
+                
+                //Especie
+                
+                var cadEsp = document.getElementById('cadEsp');
+
+                var edtEsp = document.getElementById('edtEsp');
+
+                var excEsp = document.getElementById('excEsp');
+                
+                var 
+                txtNomeEsp = 0,
+                txtTemMaxSup = 0,
+                txtTemMinSup = 0;
+        
+                
+        
+            //-----------------------------------------------------------
+            
+            function ambiente(acao){
+                if(acao == 'cadastrar'){
+                    cadastrarAmb();
+                }
+                if(acao == 'editar'){
+                    editarAmb();
+                }
+                if(acao == 'excluir'){
+                    excluirAmb();
+                }
+            }
+            
+            function especie(acao){
+                
+                if(acao == 'cadastrar'){
+                    cadastrarEsp();
+                }
+                if(acao == 'editar'){
+                    editarEsp();
+                }
+                if(acao == 'excluir'){
+                    excluirEsp();
+                }
+            }
+            
+            function cadastrarEsp(){
+                
+                txtNomeEsp = document.getElementById("txtNomeEsp");
+                txtTemMaxSup = document.getElementById("txtTemMaxSup");
+                txtTemMinSup = document.getElementById("txtTemMinSup");
+                cadEsp.style.left=0;
+                
+            }
+            function editarEsp(){
+                
+                txtNomeEsp = document.getElementById("txtNomeEspEdt");
+                txtTemMaxSup = document.getElementById("txtTemMaxSupEdt");
+                txtTemMinSup = document.getElementById("txtTemMinSupEdt");
+                
+                txtNomeEsp.value = 'nome q ta no banco';
+                txtTemMaxSup.value = '666';
+                txtTemMinSup.value = '8000';
+                
+                edtEsp.style.left=0;
+                
+            }
+            
+            function excluirEsp(){
+                
+                txtNomeEsp = document.getElementById("txtNomeEspExc");
+                txtTemMaxSup = document.getElementById("txtTemMaxSupExc");
+                txtTemMinSup = document.getElementById("txtTemMinSupExc");
+                
+                txtNomeEsp.value = 'nome q ta no banco';
+                txtTemMaxSup.value = '666';
+                txtTemMinSup.value = '8000';
+                
+                // Desabilitando os campos
+                txtNomeEsp.disabled = true;
+                txtTemMaxSup.disabled = true;
+                txtTemMinSup.disabled = true;
+                
+                excEsp.style.left=0;
+                
+            }
+            
+            
+            
+            
+            
+            
+            function cadastrarAmb(){
+                
+                cadAmb.style.left=0;
+                
+            }
+            function editarAmb(){
+                
+                
+                edtAmb.style.left=0;
+                
+            }
+            
+            function excluirAmb(){
+                
+                
+                excAmb.style.left=0;
+                
+            }
+            
+            function x(obj){
+                document.getElementById(obj).style.left = '-110vw';
+                
+                
+                
+                // Habilitando os campos
+                txtNomeEsp.disabled = false;
+                txtTemMaxSup.disabled = false;
+                txtTemMinSup.disabled = false;
+                
+            }
+        </script>
+    </body>
+</html>

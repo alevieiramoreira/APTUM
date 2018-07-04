@@ -1,9 +1,9 @@
-<html lang="en">
+﻿<html lang="en">
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>APTUM</title>
+      <title>APTUM - Login</title>
       <link rel="stylesheet" href="css.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!--link do bootsrap-->
       <link rel="shortcut icon"  href="imagens/APTUMicon2.png">
@@ -12,134 +12,46 @@
 </head>
       <body>
             
-			<div id="backVideo"></div>
-			<div id="frontVideo"></div>
-			
-        <footer>
-                     
-            <div class="rodape" id="Contatos">
-			
-				<div class='areasRodape'>
-					<div class='tituloAreaRodape'>Localização</div>
-					<div class='icone'>
-						<img src='imagens/local.png'>
-					</div>
-					<div class='conteudoAreaRodape'>
-						Rua Haddock Lobo
-						<br> 595
-					</div>			
-					<div class='conteudoAreaRodape'>
-						Cerqueira César 
-						<br>São Paulo - SP
-					</div>
-				</div>
-				
-				<div class='areasRodape'>
-				
-					<div class='tituloAreaRodape'>Redes Sociais</div>
-					<br>
-					<div class='icone'>
-						<a href="http://facebook.com"><img src='imagens/facebook2.png'></a>
-					</div>
-					<div class='icone'>
-						<a href="http://facebook.com"><img src='imagens/twitter2.png'></a>
-					</div>
-					<div class='icone'>
-						<a href="http://facebook.com"><img src='imagens/instagram2.png'></a>
-					</div>
-					<div class='icone'>
-						<a href="http://facebook.com"><img src='imagens/linkedin2.png'></a>
-					</div>
-					<div class='icone'>
-						<a href="http://facebook.com"><img src='imagens/g+2.png'></a>
-					</div>
-				</div>
-				
-				<div class='areasRodape'>
-					<div class='tituloAreaRodape' style="border-top: solid 0px;">Fale conosco</div> <!--Mudem pra a border-top pra 1px se quiserem a linha no meio do rodapé-->
-					<div class='icone'>
-						<img src='imagens/contato.png'>
-					</div>
-					<div class='conteudoAreaRodape'>0800 777 7000
-						<br> 4002-8922
-					</div>			
-					<div class='conteudoAreaRodape'>APTUM Enterprise
-						<br> APTUM@gmail.com
-					</div>
-				</div>
-				
-				<div class='areasRodape'>
-					<div class='tituloAreaRodape' style="border-top: solid 0px;">Alguma Dúvida?</div> <!--Mudem pra a border-top pra 1px se quiserem a linha no meio do rodapé-->
-					<div class='icone'>
-						<img src='imagens/duvidas.png'>
-					</div>
-					
-					<div class="botaoj">Ajuda</div>
-				</div>
-				
-				<div class="areaRodapeDireitosReservados">
-					APTUM™
-					<br>
-					2018
-					<br>
-					Todos os direitos reservados
-					<br>
-					<div class='icone'>
-						<img src='imagens/camaleaoicon.png'>
-					</div>
-				</div>
-				
-            </div>
-        </footer>
+        <div id="backVideo">
+            
+            <video autoplay muted loop id="videoID">
+            </video>
+            
+        </div>
+          <div id="frontVideo">
+              <div id="caixa">
+                  <div class="tituloForm">Entre na sua conta</div>
+                    <form action="perfil.html">
+                        <input type="text" id= "usuario" placeholder="Usuário"/> 
+                        <input id= "senha" type="password" placeholder="Senha"/> 
+                        <br>
+                        <input type="checkbox" id="checkbox"/> <label for="checkbox">Manter-me conectado</label> 
+                        <button type= "submit">Entrar</button>
+                        <div class="ou">OU</div>
+                        <a  href="cadastro.html">
+                            <button type="button">Cadastrar-se</button>
+                        </a>
+                    </form>
+              </div>
+          </div>
+          
+          <a href="index.html">
+              <div class="logo"><!--A class onde insere o logo-->
+                    <img src="imagens/aptum.png">
+              </div>
+          </a>
+          
+       
 
              <script type="text/javascript">
-                 
-                 var menu = document.getElementById('desce'); //Coloca o elemento com o ID 'menu' em uma variavel
-                 menu.style.marginTop='-100px'; // Muda a margin-top do menu pra -100px
-                 
-                 onload = function(){ //qndo a pagina carrega essa função é ativada
-                     menu.style.transition='0.5s ease-in'; //muda a transição do menu pra um tempo de 0.5 segundos e ease-in(mais lento no começo da transição)
-                     menu.style.marginTop='0'; //Muda a margin-top do menu de volta pra 0
-                     
-                 };
-
-      // Scrolling Effect
-	
-      $(window).on("scroll load", function() { //Rola a janela para uma posição específica no documento e a tag "scroll" e uma tag que faz a exibição do objeto.
-            if($(window).scrollTop()) { //Onde quando a barra navegar estiver no "scrollTop" no topo da pagina vai exercer essa função
-                  $('nav').addClass('black');//Onde as condiçoes são quando a barra de navegação conhecida como "nav" nao estiver no topo vai adicionar a "cor" escolhida
-            }
-
-            else {
-                  $('nav').removeClass('black');//Caso ao contrario quando estiver no topo vai remover a "cor escolhida"
-            }
-      });
+                 var videos = ['v0.mp4','v1.mp4','v2.mp4','v3.mp4','v4.mp4','v5.mp4','v6.mp4','v7.mp4','v8.mp4','v9.mp4','v10.mp4','v11.mp4','v12.mp4','v13.mp4','v14.mp4'];
+                 var videoFundo = videos[Math.floor(Math.random()*videos.length)];
+                 var video = document.getElementById('videoID');
+                 var fonteVideo = document.createElement('source');
+                 fonteVideo.setAttribute('src', 'Videos/'+videoFundo);
+                 video.appendChild(fonteVideo);
+                 video.play();
 	  
-	  
-	  //Rolagem lisa qndo clica nos links do menu
-	  $(document).ready(function(){
-	  
-	  $("a").on('click', function(event) { // Adiciona rolagem pra todos os links (tag <a>)
-
-		
-		if (this.hash !== "") { // ativa "Se href do link não tiver vazio"
-		  
-		  event.preventDefault(); // Previne comportamentos padrão qndo clica em links
-
-		  
-		  var hash = this.hash; //  Guarda o 'href' em uma variavel
-
-		  //Usando o método animate() do jQuery pra adicionar a rolagem lisa
-		  $('html, body').animate({
-			scrollTop: $(hash).offset().top
-		  }, 800, function(){ // O número (800) é quantos milisegundos demora pra rolar até o local
-	   
-			
-			window.location.hash = hash; // Adiciona hash (#) no URL (endereço da pagina) quando termina de rolar (Isso é um comportamento padrão só q foi prevenido lá em cima)
-		  });
-		} // Fim do if
-	  });
-	});
 
       </script>
      

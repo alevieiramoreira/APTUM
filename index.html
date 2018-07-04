@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
       <meta charset="UTF-8">
@@ -12,13 +12,8 @@
       <script src="https://code.jquery.com/jquery-3.3.1.js"></script> <!--link do jquery-->
 </head>
       <body>
-      <div class="wrapper"><!--Um wrapper é algo que envolve um único objeto para fornecer mais funcionalidade e interface para ele-->
-            <header id="Home">
+            <header class="header0">
                 <nav> <!-- conjunto de links de navegação.-->
-                    <div class="menu-icon">
-                        <i class="fa fa-bars fa-2x"></i><!--para ter o icone e o tamanho-->
-                    </div>
-
                     <div class="logo"><!--A class onde insere o logo-->
                         <img src="imagens/aptum.png">
                     </div>
@@ -29,7 +24,14 @@
                               <a href="#Produto"><li>E-Scale</li></a>
                               <a href="#Empresa"><li>APTUM™</li></a>
                               <a href="#Contatos"><li>Contatos</li></a>
-                              <li class='semBorda'><a href="#" class="l">Login</a><a href="#" class="l">Cadastre-se</a></li> <!--Class 'semBorda' usada na tag <li> botão login pra não ter borda quando dar hover-->
+							  <li class='semBorda'>
+								 	<a href="login.aspx" class="l">
+									  Login
+									</a>
+									<a href="Cadastro.aspx" class="l">
+										Cadastre-se
+									</a>
+								</li> <!--Class 'semBorda' usada na tag <li> botão login pra não ter borda quando dar hover-->
 
                         </ul>
                     </div>
@@ -39,22 +41,25 @@
 
 
             <section>
-                  <div class="pagina" id='Produto'> <!--Div caixa q é o quadrado meio banco, nesse caso do lado do chocolate com uma frase-->
-                      <div class='caixa'>
-                          <div class="titulo">Project E-Scale</div>
-                              <div class="textocorpo">De fato, tanto as expressões espanhola e portuguesa empresa como as acepções francesa e inglesa entrepreneur procedem etimologicamente do verbo latino in prehendo-endi-ensum, que significa descobrir, ver, perceber, dar-se conta de, capturar; e a expressão latina in prehensa comporta claramente a ideia de ação, no sentido de tomar, agarrar. Em suma, empresa é sinônimo de ação, sendo que na França já há muito tempo, na Alta Idade Média, se utilizava o termo entrepreneur para designar as pessoas encarregadas de efetuar ações importantes, geralmente relacionadas com a guerra, ou de levar a cabo os grandes projetos relacionados com a construção de catedrais. No castelhano, um dos significados do termo empresa, de acordo com o Diccionario da Real Academia Espanhola, é o de "ação árdua e difícil que se inicia valorosamente".  
-                              </div>
+				  <div class="pagina" id='Produto'> <!--Div caixa q é o quadrado meio banco, nesse caso do lado do chocolate com uma frase-->
+					  <div class='caixa'>
+						  <div class="titulo">Project E-Scale</div>
+							  <div class="textocorpo">
+								  Entenda como a APTUM desenvolve seu produto com responsabilidade e excelência,
+								  auxiliando nossos clientes com os cuidados e prevenções com seus pets, procurando adaptar-se 
+								  de acordo com a necessidade das empresas ou das residências que contratam nossos serviços.   
+							  </div>
 							  
-							  <a href="empresa.html">
+							  <a href="produto.html">
 								  <div class="botaop2">
 									Saiba Mais 
 								  </div> 
 							  </a>
 						  </div>
-                              <div class='caixaCor'><!--div que é o quadrado azul com a imagem do chocolate-->
-                                  <img src='imagens/arduino.jpg'> <!--tag html img especificando o caminho da imagem do chocolate-->
-                              </div>
-                      </div>
+							  <div class='caixaCor'><!--div que é o quadrado azul com a imagem do chocolate-->
+								  <img src='imagens/arduino.jpg'> <!--tag html img especificando o caminho da imagem do chocolate-->
+							  </div>
+					  </div>
             
                   <!--Div que contem a foto do peixe, 
                   que nesse caso está sendo definida como background da div através do css inline-->
@@ -68,7 +73,7 @@
 						APTUM
 					</div>
 					<div class="textocorpo">
-						O Arduino foi criado em 2005 por um grupo de 5 pesquisadores : Massimo Banzi, David Cuartielles, Tom Igoe, Gianluca Martino e David Mellis. O objetivo era elaborar um dispositivo que fosse ao mesmo tempo barato, funcional e fácil de programar, sendo dessa forma acessível a estudantes e projetistas amadores. Além disso, foi adotado o conceito de hardware livre, o que significa que qualquer um pode montar, modificar, melhorar e personalizar o Arduino, partindo do mesmo hardware básico. 
+						Afinal, quem somos? Conheça nossas origens, a equipe por trás de tudo, nossos objetivos e valores. 
 					</div>
 					<a href="empresa.html">
 						<div class="botaop2">
@@ -77,49 +82,36 @@
 					</a>
 				</div>
             </div>
-            
-                  
-                  <!--mesmo caso da div com a foto do peixe de fundo-->
     
-                <div class="textoFT">
-                   
-                </div>
-                </section>
-    
-            </div>
+        	</section>
+
                  <footer>
                 <div class="parcerias">
                 <div class="opacidade">
-                  <div class="divpacerias">
+                  <div class="divpacerias"> <!--Cada caixa das empresas é uma divParceria-->
 				  <div class='bgImg'> <!--div pra colocar a img do logo das empresas parceiras-->
-					<img src="imagens/tivit.png">
+					<img src="imagens/logo1.png">
 				  </div>
-                  <div class="textop">TIVIT</div>
+                  <div class="textop">Frutech</div>
 
-                  <p>A overflowpropriedade especifica o que deve acontecer se o conteúdo transborda caixa de um elemento.
-Esta propriedade especifica se para cortar conteúdo ou adicionar barras de rolagem quando o conteúdo de um elemento é grande demais para caber em uma área especificada.
-Nota: A overflowpropriedade só funciona para elementos de bloco com uma altura especificada.</p>
+                  <p></p>
 
                   </div>
                   <div class="divpacerias">
 				  <div class='bgImg'> <!--div pra colocar a img do logo das empresas parceiras-->
-					<img src="imagens/stefanini.png">
+					<img src="imagens/logo2.png">
 				  </div>
-                  <div class="textop">STEFANINI</div>
-                                    <p>A overflowpropriedade especifica o que deve acontecer se o conteúdo transborda caixa de um elemento.
-Esta propriedade especifica se para cortar conteúdo ou adicionar barras de rolagem quando o conteúdo de um elemento é grande demais para caber em uma área especificada.
-Nota: A overflowpropriedade só funciona para elementos de bloco com uma altura especificada.</p>
+                  <div class="textop">Snowy</div>
+                                    <p></p>
 
                   </div>
 
                   <div class="divpacerias">
 				  <div class='bgImg'> <!--div pra colocar a img do logo das empresas parceiras-->
-					<img src="imagens/totvs.png">
+					<img src="imagens/logo3.png">
 				  </div>
-                  <div class="textop">TOTVS</div>
-                                    <p>A overflowpropriedade especifica o que deve acontecer se o conteúdo transborda caixa de um elemento.
-Esta propriedade especifica se para cortar conteúdo ou adicionar barras de rolagem quando o conteúdo de um elemento é grande demais para caber em uma área especificada.
-Nota: A overflowpropriedade só funciona para elementos de bloco com uma altura especificada.</p>
+                  <div class="textop">Pollo</div>
+                                    <p></p>
 
 
 
@@ -127,23 +119,19 @@ Nota: A overflowpropriedade só funciona para elementos de bloco com uma altura 
 
                   <div class="divpacerias">
 				  <div class='bgImg'> <!--div pra colocar a img do logo das empresas parceiras-->
-					<img src="imagens/digisystem.png">
+					<img src="imagens/logo4.png">
 				  </div>
-                  <div class="textop">DIGISYSTEM</div>
-                                    <p>A overflowpropriedade especifica o que deve acontecer se o conteúdo transborda caixa de um elemento.
-Esta propriedade especifica se para cortar conteúdo ou adicionar barras de rolagem quando o conteúdo de um elemento é grande demais para caber em uma área especificada.
-Nota: A overflowpropriedade só funciona para elementos de bloco com uma altura especificada.</p>
+                  <div class="textop">AgroPeace</div>
+                                    <p></p>
 
                   </div>
 
                   <div class="divpacerias"> 
 				  <div class='bgImg'> <!--div pra colocar a img do logo das empresas parceiras-->
-					<img src="imagens/easynvest.png">
+					<img src="imagens/logo6.png">
 				  </div>
-                  <div class="textop">EASYNVEST</div>
-                                    <p>A overflowpropriedade especifica o que deve acontecer se o conteúdo transborda caixa de um elemento.
-Esta propriedade especifica se para cortar conteúdo ou adicionar barras de rolagem quando o conteúdo de um elemento é grande demais para caber em uma área especificada.
-Nota: A overflowpropriedade só funciona para elementos de bloco com uma altura especificada.</p>
+                  <div class="textop">Infinitus</div>
+                                    <p></p>
               
 
                   </div>
@@ -209,8 +197,9 @@ Nota: A overflowpropriedade só funciona para elementos de bloco com uma altura 
 					<div class='icone'>
 						<img src='imagens/duvidas.png'>
 					</div>
-					
-					<div class="botaoj">Ajuda</div>
+					<a href="faq.aspx">
+					    <div class="botaoj">Ajuda</div>
+                    </a>
 				</div>
 				
 				<div class="areaRodapeDireitosReservados">
@@ -231,10 +220,10 @@ Nota: A overflowpropriedade só funciona para elementos de bloco com uma altura 
              <script type="text/javascript">
                  
                  var menu = document.getElementById('desce'); //Coloca o elemento com o ID 'menu' em uma variavel
-                 menu.style.marginTop='-100px'; // Muda a margin-top do menu pra -100px
+                 menu.style.marginTop=-100+'px'; // Muda a margin-top do menu pra -100px
                  
                  onload = function(){ //qndo a pagina carrega essa função é ativada
-                     menu.style.transition='0.5s ease-in'; //muda a transição do menu pra um tempo de 0.5 segundos e ease-in(mais lento no começo da transição)
+                     menu.style.transition='.5s'; //muda a transição do menu pra um tempo de 0.5 segundos e ease-in(mais lento no começo da transição)
                      menu.style.marginTop='0'; //Muda a margin-top do menu de volta pra 0
                      
                  };

@@ -1,0 +1,330 @@
+﻿<html lang="en">
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>APTUM - Relatórios</title>
+            <link rel="stylesheet" href="css.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!--link do bootsrap-->
+            <link rel="shortcut icon" href="imagens/APTUMicon2.png">
+
+            <script src="https://code.jquery.com/jquery-3.3.1.js"></script> <!--link do jquery-->
+            
+            <script src="moment.min.js"></script>
+            <script src="Chart.js"></script>
+            <script src="utils.js"></script>
+            
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    </head>
+    <body>
+        <nav>
+                <!-- conjunto de links de navegação.-->
+                <div class="logo">
+                        <!--A class onde insere o logo-->
+                        <img src="imagens/aptum.png">
+                </div>
+
+                <div class="menu" id="desce">
+                        <ul>
+                                <a href="#Home"><li>Home</li></a>
+                                <a href="#Produto"><li>E-Scale</li></a>
+                                <a href="#Empresa"><li>APTUM™</li></a>
+                                <a href="#Contatos"><li>Contatos</li></a>
+
+                                <a href="Gerenciamento.html" class="btnPerfil">
+                                        Gerenciar Ambientes e Espécies
+                                </a>
+                                <a href="Perfil.html" class="btnPerfil">
+                                        Voltar ao Perfil
+                                </a>
+
+                        </ul>
+                </div>
+        </nav>                      
+
+        <div class="paginaGraf">
+            <div class="areaDivisaoR" id="divisao"> 
+                <label class="lbl" style="font-size: 20px;">Selecione as informações que deseja filtrar ou deixe em branco para um relatório geral</label>
+                <div class="caixaDivisao">
+                    <div class="show amb" onclick="show('amb')">+</div>
+                    <div class="campos">
+                        
+                        <label class="lbl" for="txtAmbiente" onclick="show('amb')">Por Ambientes</label>
+                        <div class="hidden" id="amb">
+                            <div id="listaAmb">
+                                <select name="txtAmbiente0" id="txtAmb0">
+                                    <option value="1">Ambiente 1</option>
+                                    <option value="2">Casa dos repteis</option>
+                                </select>
+                            </div>
+                            <div class="camposSmall">
+                                <input type="button" class="btnAdd" value="Add outro ambiente" onclick="addAmb()">
+                            </div>
+                            
+                            <div class="camposSmall">
+                                <input type="button" class="btnAdd" value="Remover ambiente" onclick="rmvAmb()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="caixaDivisao">
+                    <div class="show esp" onclick="show('esp')">+</div>
+                    <div class="campos">
+                        <label class="lbl" for="txtEspecie" onclick="show('esp')">Por Espécies</label>
+                        <div class="hidden" id="esp">
+                            <div id="listaEsp">
+                                <select name="txtEspecie0" id="txtEsp0">
+                                    <option value="1">esp 1</option>
+                                    <option value="2">repteis</option>
+                                </select>
+                            </div>
+                            <div class="camposSmall">
+                                <input type="button" class="btnAdd" value="Add outra Espécie" onclick="addEsp()">
+                            </div>
+                            
+                            <div class="camposSmall">
+                                <input type="button" class="btnAdd" value="Remover Espécie" onclick="rmvEsp()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="caixaDivisao">
+                    <div class="show data" onclick="show('data')">+</div>
+                    <div class="campos">
+                        <label class="lbl" for="txtxData" onclick="show('data')">Por Data</label>
+                        
+                        <div class="hidden" id="data">
+                            <div class="camposSmall">
+                                <label class="lbl" for="deData">De</label>
+                                <input id="deData" type="date"/>
+                                <input id="deHora" type="time"/>
+                            </div>
+                            <div class="camposSmall">
+                                <label class="lbl" for="ateData">Até</label>
+                                <input id="ateData" type="date"/>
+                                <input id="ateHora" type="time"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div id="camposSmall">
+                    <button type="button" id ="btnGerar" onclick="gerar()">Gerar relatório</button>
+                </div>
+                
+            </div>
+            <div class="areaTabelaRelatorio">
+                <div id="caixaRolagemTabela">
+                    <table id="tabelaTitulo">
+                            <tr>
+                                    <th>Data</th>
+                                    <th>Hora</th>
+                                    <th>Temperatura</th>
+                                    <th>Media</th>
+                                    <th>Moda</th>
+                                    <th>Desvio Padrão</th>
+                                    <th>Minima</th>
+                                    <th>1º Quartil</th>
+                                    <th>Mediana</th>
+                                    <th>3º Quartil</th>
+                                    <th>Máxima</th>
+                            </tr>
+                    </table>
+                    <table id="tabelaDados"></table>
+                </div>
+            </div>
+            
+        </div>
+        <script type="text/javascript" charset="windows-1252" src="scriptDados.js">
+            
+        </script>
+        <script type="text/javascript">
+            
+            dataHoje();
+            
+            var hidden = document.getElementsByClassName('hidden');
+            var mostrar, simbolo;
+            
+            for(i = 0; i<hidden.length; i++){
+                hidden[i].style.display="none";
+            }
+            
+            function show(tipo){
+                mostrar = document.getElementById(tipo);
+                
+                simbolo = document.getElementsByClassName(tipo);
+                
+                for(i=0;i<simbolo.length;i++){
+                    if(simbolo[i].textContent=="-"){
+                        simbolo[i].textContent="+";
+                        mostrar.style.display="none";
+                    }
+                    else{
+                        simbolo[i].textContent="-";
+                        mostrar.style.display="block";
+                    }
+                }
+            }
+            
+            var EspId = 0;
+            function addEsp(){
+                EspId++;
+                var listaEsp = document.getElementById('listaEsp');
+                var txtEsp = document.createElement('select');
+                
+                txtEsp.setAttribute('name', 'txtEspecie'+EspId);
+                txtEsp.setAttribute('id', 'txtEsp'+EspId);
+                
+                
+                var espOption = document.createElement('option');
+                espOption.setAttribute('value','1');
+                
+                txtEsp.appendChild(espOption);
+                
+                espOption.textContent='Espécie do banco '+EspId;
+                
+                
+                listaEsp.appendChild(txtEsp);
+            }
+            
+            var AmbId = 0;
+            function addAmb(){
+                AmbId++;
+                var listaAmb = document.getElementById('listaAmb');
+                var txtAmb = document.createElement('select');
+                
+                txtAmb.setAttribute('name', 'txtAmbiente'+AmbId);
+                txtAmb.setAttribute('id', 'txtAmb'+AmbId);
+                
+                
+                var ambOption = document.createElement('option');
+                ambOption.setAttribute('value','1');
+                
+                txtAmb.appendChild(ambOption);
+                
+                ambOption.textContent='Ambiente do banco '+AmbId;
+                
+                
+                listaAmb.appendChild(txtAmb);
+            }
+            
+            function rmvAmb(){
+                if(AmbId>=0){
+                    var listaAmb = document.getElementById('listaAmb');
+                    var txtAmbRemove = document.getElementById('txtAmb'+AmbId);
+                    listaAmb.removeChild(txtAmbRemove);
+
+                    txtAmbRemove = undefined;
+                    
+                    AmbId--;
+                }
+            }
+            
+            function rmvEsp(){
+                if(EspId>=0){
+                    var listaEsp = document.getElementById('listaEsp');
+                    var txtEspRemove = document.getElementById('txtEsp'+EspId);
+                    listaEsp.removeChild(txtEspRemove);
+
+                    txtEspRemove = undefined;
+                    
+                    EspId--;
+                }
+            }
+            
+            function dataHoje() {
+			var hoje = new Date();
+			var dd = hoje.getDate();
+			var mm = hoje.getMonth() + 1; //Janeiro é 0!
+			var aaaa = hoje.getFullYear();
+
+
+
+			if (dd < 10) { //Se for menor q dez pra ficar, por exemplo: 01/01/1999 no lugar de 1/1/1999
+				dd = '0' + dd;
+			}
+
+			if (mm < 10) {
+				mm = '0' + mm;
+			}
+
+			hoje = dd + '/' + mm + '/' + aaaa;
+                        
+                        document.getElementById('ateData').setAttribute('value',aaaa+'-'+mm+'-'+dd);
+                        
+        
+                        var agora = new Date();
+			var segundo = agora.getSeconds();
+			var minuto = agora.getMinutes();
+			var hora = agora.getHours();
+                        if(hora<10){
+                            hora = 0+''+hora;
+                        }
+			agora = hora + ":" + minuto + ":" + segundo;
+                        document.getElementById('ateHora').setAttribute('value',hora+':'+minuto);
+                        
+                        
+		}
+                
+               
+                
+                function gerar(){
+                    var ambs = [];
+                    var esps = [];
+                    var deData = document.getElementById('deData').value
+                    , deHora = document.getElementById('deHora').value
+                    , ateData = document.getElementById('ateData').value
+                    , ateHora  = document.getElementById('ateHora').value;
+                    
+                    for(i = 0; i<=AmbId; i++){
+                        var txtAmbGerar = document.getElementById('txtAmb'+i);
+                        //window.alert(txtAmbGerar.options[txtAmbGerar.selectedIndex].text);
+                        ambs[i] = txtAmbGerar.options[txtAmbGerar.selectedIndex].text;
+                    }
+                    
+                    for(i = 0; i<=EspId; i++){
+                        var txtEspGerar = document.getElementById('txtEsp'+i);
+                        //window.alert(txtEspGerar.options[txtEspGerar.selectedIndex].text);
+                        esps[i] = txtEspGerar.options[txtEspGerar.selectedIndex].text;
+                    }
+                    
+                    select = "select * from tb_Histórico where codCliente = 1 and Data BETWEEN ('"+deData+" "+deHora+"' AND '"+ateData+" "+ateHora+"') AND (";
+                    
+                    for (i=0;i<ambs.length;i++){
+
+                        for (j=0;j<esps.length;j++){
+                            if(j == esps.length-1){
+                                select+= "(nomeAmbiente = '"+ambs[i]+"' AND NomeEspecie = '"+esps[j]+"') ) ";
+                            }
+                            else{
+                                select+= "(nomeAmbiente = '"+ambs[i]+"' AND NomeEspecie = '"+esps[j]+"') OR ";
+                            }
+                        }
+                    }
+                    
+                    alert(select);
+                    
+                    
+                /*Testando jsPDF*/
+                    
+                    var doc = new jsPDF();
+                    
+                    doc.text(20,20, 'finge q aqui tem os dados que foram recebidos no select');
+                    doc.addPage();
+                    
+                    var quebrarSelect = doc.splitTextToSize(select, 180);
+                    doc.text(15, 20, quebrarSelect);
+                    
+                    doc.save('relatório.pdf');
+                }
+
+		
+                
+                
+                
+
+        </script>
+    
+    </body>
+</html>
